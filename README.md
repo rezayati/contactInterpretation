@@ -1,1 +1,7 @@
 # contactInterpretation
+
+numpy==1.19.5
+torch==1.10.1
+pandas==1.1.5
+torchvision==0.11.2
+torchmetrics==0.8.2
