@@ -67,39 +67,44 @@ from threading import Thread
 from threading import Event
 from import_model import import_lstm_models
 
+# Set the main path
 main_path = '/home/mindlab/contactInterface/'
 
+# Define parameters for the LSTM models
 num_features_lstm = 4
 contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_06_30_2023_10:16:53.pth'
 collision_detection_path = main_path + 'AIModels/trainedModels/collisionDetection/trainedModel_06_30_2023_09:07:24.pth'
 localization_path = main_path + 'AIModels/trainedModels/localization/trainedModel_06_30_2023_09:08:08.pth'
-
-joints_data_path = main_path + 'frankaRobot/robotMotionJointData.csv'
 window_length = 28
 features_num = 28
 dof = 7
 
-# load model
+# Define paths for joint motion data
+joints_data_path = main_path + 'frankaRobot/robotMotionJointData.csv'
 
+# load model
 model_contact, labels_map_contact = import_lstm_models(PATH=contact_detection_path, num_features_lstm=num_features_lstm)
 model_collision, labels_map_collision = import_lstm_models(PATH=collision_detection_path, num_features_lstm=num_features_lstm)
 model_localization, labels_map_localization = import_lstm_models(PATH=localization_path, num_features_lstm=num_features_lstm)
 
+# Set device for PyTorch models
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 if device.type == "cuda":
 	torch.cuda.get_device_name()
 
-
+# Move PyTorch models to the selected device
 model_contact = model_contact.to(device)
 model_collision = model_collision.to(device)
 model_localization = model_localization.to(device)
 
+# Define transformation for input data
 transform = transforms.Compose([transforms.ToTensor()])
 window = np.zeros([window_length, features_num])
 
+# Create message for publishing model output (will be used in saceDataNode.py)
 model_msg = Floats()
 
-
+# Callback function for contact detection
 def contact_detection(data):
 	global window, publish_output, big_time_digits
 	start_time = rospy.get_time()
