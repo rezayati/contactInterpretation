@@ -38,19 +38,22 @@ Universal Robots RTDE: https://sdurobotics.gitlab.io/ur_rtde/
 
 #### 2nd Step: run frankapy
 
-	-open an terminal
+open an terminal
+
 		conda activate frankapyenv
 		bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 #### 3nd Step: run digital glove node
 
-	-open another temrinal
+open another temrinal
+
 		source /opt/ros/noetic/setup.bash
 		/home/mindlab/miniconda3/envs/frankapyenv/bin/python /home/mindlab/contactInterpretation/dataLabeling/digitalGloveNode.py
 
 #### 4th Step: run robot node
 
-	-open another terminal 
+open another terminal 
+
 		conda activate frankapyenv
 		source /opt/ros/noetic/setup.bash
 		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
@@ -60,7 +63,8 @@ Universal Robots RTDE: https://sdurobotics.gitlab.io/ur_rtde/
 
 #### 5th Step: run save data node
 
-	-open another terminal
+open another terminal
+
 		source /opt/ros/noetic/setup.bash
 		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
 		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
@@ -79,7 +83,8 @@ sudo nano /home/mindlab/franka/franka-interface/catkin_ws/src/franka_ros_interfa
 
 #### 2nd Step: run program
 
-    -open a terminal
+open a terminal
+
         conda activate frankapyenv
         source /opt/ros/noetic/setup.bash
         /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/urRobot/main_ur10.py
@@ -97,13 +102,15 @@ sudo nano /home/mindlab/franka/franka-interface/catkin_ws/src/franka_ros_interfa
 
 ### 2nd Step: run frankapy
 
-   -open an terminal
+open an terminal
+
 	conda activate frankapyenv
 	bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 ### 3nd Step: run this code
 
-    -open another terminal 
+open another terminal 
+
         conda activate frankapyenv
 	    source /opt/ros/noetic/setup.bash
 		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
