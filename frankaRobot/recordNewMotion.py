@@ -2,16 +2,16 @@
 By Maryam Rezayati
 
 How to run?
-## 1st  Step: unlock robot
-	1) connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
-	2) unlock the robot and activate FCI
+1. unlock robot
+	-connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
+	-unlock the robot and activate FCI
 
-## 2nd Step: run frankapy
+2. run frankapy
    -open an terminal
 	conda activate frankapyenv
 	bash /home/mindlab/franka/run_frankapy.sh
 
-## 3nd Step: run this code
+3. run this code
     -open another terminal 
 	conda activate frankapyenv
 	source /opt/ros/noetic/setup.bash
