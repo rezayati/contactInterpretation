@@ -2,46 +2,36 @@
 """
 By Maryam Rezayat
 
-The code initially requests a tag name for data labeling, and then continuously records the data until the program is manually stopped.
-Executing this code allows you to store all collected data. 
-It creates a folder in the specified PATH, and prompts you to enter a tag name for labeling the data. 
+This code continuously records data from the Franka Panda robot until manually stopped. It prompts the user to enter a tag name for labeling the data.
 
-    1. all_data.txt : This file encompasses all data published by the Franka Panda robot.
-    2. true_label.csv : Contains data of true labels acquired through CANBUS communication.
-    3. model_result.csv : Presents the model output and data window.
+Files Created:
+1. all_data.txt: Contains all data published by the Franka Panda robot.
+2. true_label.csv: Contains data of true labels acquired through CANBUS communication.
+3. model_result.csv: Presents the model output and data window.
 
+How to Run:
+1. Unlock the Robot:
+    - Connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33).
+    - Unlock the robot and activate FCI.
 
-How to run?
-## 1st  Step: Unlock the Robot
-1) connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
-2) unlock the robot and activate FCI
+2. Connecting to the Robot (Running Frankapy):
+    - Open a terminal.
+    - Navigate to /home/mindlab/franka.
+    - Run the bash script: bash run_frankapy.sh.
 
-## 2nd Step: Connecting to the Robot (Runing Frankapy)
-open an terminal
-cd /home/mindlab/franka
-bash run_frankapy.sh
+3. Specify the Output Folder (PATH) - (line 56 in the code).
 
-## 3nd Step: Specify the Output Folder (PATH) - (line 56 in the code)
-
-## 4th step: Run the Program
-open another terminal:
-
-conda activate frankapyenv
-# Source ROS libraries
-source /opt/ros/noetic/setup.bash
-
-# Source Franka interface and Frankapy libraries
-source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
-
-/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/saveDataNode.py
-
-
+4. Run the Program:
+    - Open another terminal:
+        conda activate frankapyenv
+        source /opt/ros/noetic/setup.bash
+        source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
+        source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+        /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/saveDataNode.py
 """
 
-## import required libraries 
+## Import required libraries 
 import numpy as np
-
 import rospy
 from std_msgs.msg import Float64
 from rospy_tutorials.msg import Floats
@@ -50,55 +40,55 @@ from franka_interface_msgs.msg import RobotState
 import csv
 import datetime
 import os
-#publish_output = rospy.Publisher("/showOutput", numpy_msg(Floats), queue_size= 1)
 
+# Set the default PATH
 PATH = '/home/mindlab/'
 
+# Prompt the user to enter a tag name for data labeling
+folder_name = input('Enter tag name: ')
 
-folder_name = input('enter tag name:   ') #str(datetime.datetime.now())a1
-
-class log_data():
-    def __init__(self, PATH:str) -> None:
+class LogData:
+    def __init__(self, PATH: str) -> None:
+        # Initialize ROS node
         rospy.init_node('log_data')
-        print('ros node is initiated!')
-        self.PATH = PATH+folder_name
+        print('ROS node is initiated!')
+        
+        # Create a folder for saving data
+        self.PATH = PATH + folder_name
         os.mkdir(self.PATH)
-        print("Directory '% s' created" % self.PATH)
+        print("Directory '%s' created" % self.PATH)
 
-        #creating empty files for saving datag1
-        self.file_all = open(self.PATH+'/all_data.txt', 'w')
-        self.file_index = csv.writer(open(self.PATH+'/true_label.csv', 'w'))
-        self.file_index.writerow(('time_sec', 'time_nsec', 'timestamp', 'DATA0','DATA1', 'DATA2','DATA3','DATA4'))
+        # Create empty files for saving data
+        self.file_all = open(self.PATH + '/all_data.txt', 'w')
+        self.file_index = csv.writer(open(self.PATH + '/true_label.csv', 'w'))
+        self.file_index.writerow(('time_sec', 'time_nsec', 'timestamp', 'DATA0', 'DATA1', 'DATA2', 'DATA3', 'DATA4'))
 
+        self.log_model_result = csv.writer(open(self.PATH + '/model_result.csv', 'w'))
+        self.log_model_result.writerow(('Time_sec', 'Time_nsec', 'prediction_duration', 'contact_out', 'collision_out', 'localization_out'))
+        print('*** Four empty text files are created in ', self.PATH, ' ***')
 
-        self.log_model_reslut = csv.writer(open(self.PATH+'/model_result.csv', 'w'))
-        self.log_model_reslut.writerow(('Time_sec','Time_nsec', 'prediction_duration', 'contact_out', 'collision_out', 'localization_out'))
-        print('***  Four empty text files are created in ', self.PATH,'  ***')
+        # Subscribe to relevant ROS topics
+        rospy.Subscriber(name="/model_output", data_class=numpy_msg(Floats), callback=self.save_model_output)
+        rospy.Subscriber(name="/robot_state_publisher_node_1/robot_state", data_class=RobotState, callback=self.save_robot_state)
+        rospy.Subscriber(name="/contactTimeIndex", data_class=numpy_msg(Floats), callback=self.save_contact_index)
 
-        '''data = rospy.wait_for_message("/start_time_output", Float64)
-        print(data.data)
-        self.start_time = np.array(data.data).tolist()
-        print(int(self.start_time))
-        print(self.start_time - int(self.start_time))'''
-
-        rospy.Subscriber(name= "/model_output",data_class= numpy_msg(Floats), callback =self.save_model_output)
-        rospy.Subscriber(name= "/robot_state_publisher_node_1/robot_state",data_class= RobotState, callback= self.save_robot_state)
-        rospy.Subscriber(name="/contactTimeIndex", data_class = numpy_msg(Floats), callback = self.save_contact_index)
-    
-    def save_contact_index(self,data):
+    def save_contact_index(self, data):
+        # Save contact index data to true_label.csv
         data_row = np.array(data.data)
-        #rospy.loginfo(data.data[0])
         self.file_index.writerow(data_row)
-        
+
     def save_model_output(self, data):
+        # Save model output data to model_result.csv
         data_row = np.array(data.data)
-        self.log_model_reslut.writerow(data_row)
-        
+        self.log_model_result.writerow(data_row)
+
     def save_robot_state(self, data):
-        #rospy.loginfo("I heard %s", data)
+        # Save robot state data to all_data.txt
         self.file_all.write(str(data))
-                
+
 if __name__ == "__main__":
-    #PATH = '/home/rzma/myProjects/sim_to_real/realTimeImplementation/panda_scripts/src/LSTM_DATA/DATA/'
-    log_data(PATH)
+    # Create an instance of the LogData class
+    log_data_instance = LogData(PATH)
+    
+    # Keep the program running to listen for ROS messages
     rospy.spin()
