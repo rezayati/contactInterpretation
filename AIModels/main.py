@@ -21,8 +21,11 @@ import matplotlib.pyplot as plt
 from load_dataset import create_tensor_dataset_without_torque
 from torch.utils.data import DataLoader
 import time
+
+# Path to save trained models
 path_name = '/home/mindlab/contactInterpretation/AIModels/trainedModels/'
 
+# model configuration
 #network_type = 'flatten'
 network_type = 'main'
 num_features_lstm = 4
@@ -32,6 +35,7 @@ train_all_data = False # train a model using all avaiable data
 collision = True; localization = False; n_epochs = 120; batch_size = 64; num_classes = 2; lr = 0.001
 #collision = False; localization = True; n_epochs = 110; batch_size =64; num_classes = 2; lr = 0.001
 
+# Define the neural network model
 class Sequence(nn.Module):
     def __init__(self, num_class = 5, network_type='main',num_features_lstm=4):
         super(Sequence, self).__init__()
@@ -58,7 +62,8 @@ class Sequence(nn.Module):
         #x = x[:,-1,:]
         #print(x.shape)
         return x
-
+        
+# Function to obtain model predictions on a dataset (should be changed according to your model)
 def get_output(data_ds, model):
     labels_pred = []
     model.eval()
@@ -91,11 +96,8 @@ if __name__ == '__main__':
 
     if device.type == "cuda":
         torch.cuda.get_device_name()
-
-    # load data and make training set
-    # data = torch.load('traindata.pt')
     
-    #load data
+    # Load data and create training and testing sets
     training_data = create_tensor_dataset_without_torque('./dataset/realData/contact_detection_train.csv',num_classes=num_classes, collision=collision, localization= localization, num_features_lstm=num_features_lstm)
     testing_data = create_tensor_dataset_without_torque('./dataset/realData/contact_detection_test.csv',num_classes=num_classes, collision=collision, localization= localization,num_features_lstm=num_features_lstm)
 
@@ -106,24 +108,15 @@ if __name__ == '__main__':
     print(f"Feature batch shape: {train_features.size()}")
     print(f"Labels batch shape: {train_labels.size()}")
 
-    # build the model
+    # Build the model
     model= Sequence(num_classes, network_type, num_features_lstm)
-
     model = model.double()
-    # use LBFGS as optimizer since we can load the whole data to train
-    #begin to train
-    '''
-    for i, (data, labels) in enumerate(train_dataloader):
-        print(data.shape, labels.shape)
-        print(data,labels)
-        seq.forward(data,input_size)
-        break
-    '''
-    
+    # Use Adam optimizer and CrossEntropyLoss as the loss function
     optimizer = optim.Adam(model.parameters(), lr=lr)
     loss_fn = nn.CrossEntropyLoss()
     model.train()
 
+    # Training loop
     for epoch in range(n_epochs):
         running_loss = []
         for X_batch, y_batch in train_dataloader:
@@ -145,8 +138,7 @@ if __name__ == '__main__':
                 running_loss.append(loss.cpu().detach().numpy())
         print("Epoch: {}/{} - learning rate: {:.5f}, classification loss: {:.4f}".format(epoch + 1, n_epochs, optimizer.param_groups[0]['lr'], np.mean(running_loss)))
 
-        # Validation
-
+    # Validation
     model.eval()
     
     with torch.no_grad():
@@ -158,9 +150,8 @@ if __name__ == '__main__':
         y_pred, y_train = get_output(training_data, model)
         print("on the train set: \n",confusionMatrix(y_train , y_pred))
     
+    # Save the trained model
     named_tuple = time.localtime() 
-    
-
     if input('do you want to save the data in trained models? (y/n):')=='y':
         if collision:
             path_name_1 = path_name+'/collisionDetection/trainedModel'+str(time.strftime("_%m_%d_%Y_%H:%M:%S", named_tuple))+'.pth'
