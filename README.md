@@ -10,6 +10,8 @@ torchvision==0.11.2
 
 torchmetrics==0.8.2
 
+canlib
+
 ## robot APIS: 
 
 ### Franka Emika Panda
@@ -28,45 +30,42 @@ Universal Robots RTDE: https://sdurobotics.gitlab.io/ur_rtde/
 ### Franka Robot:
 
 #### 1st  Step: unlock robot
-	1) connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
-	2) unlock the robot and activate FCI
+	-turn on the robot (wait until it has a solid yellow)
+	-connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
+	-unlock the robot
+	-the robot light should be blue
+	-unlock the robot and activate FCI
 
 #### 2nd Step: run frankapy
 
-open an terminal
-
-	conda activate frankapyenv
-	cd /home/mindlab/franka
-	bash run_frankapy.sh
+	-open an terminal
+		conda activate frankapyenv
+		bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 #### 3nd Step: run digital glove node
 
-open another temrinal
-
-	source /opt/ros/noetic/setup.bash
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python /home/mindlab/contactInterpretation/dataLabeling/digitalGloveNode.py
+	-open another temrinal
+		source /opt/ros/noetic/setup.bash
+		/home/mindlab/miniconda3/envs/frankapyenv/bin/python /home/mindlab/contactInterpretation/dataLabeling/digitalGloveNode.py
 
 #### 4th Step: run robot node
 
-open another terminal 
-
-	conda activate frankapyenv
-	source /opt/ros/noetic/setup.bash
-	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
-
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankRobot/main.py
+	-open another terminal 
+		conda activate frankapyenv
+		source /opt/ros/noetic/setup.bash
+		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
+		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+	
+		/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/main.py
 
 #### 5th Step: run save data node
 
-open another terminal
-
-	source /opt/ros/noetic/setup.bash
-	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
-
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/saveDataNode.py
-
+	-open another terminal
+		source /opt/ros/noetic/setup.bash
+		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
+		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+	
+		/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/saveDataNode.py
 
 
 ### to chage publish rate of frankastate go to : 
@@ -80,32 +79,34 @@ sudo nano /home/mindlab/franka/franka-interface/catkin_ws/src/franka_ros_interfa
 
 #### 2nd Step: run program
 
-open a terminal
-conda activate frankapyenv
-source /opt/ros/noetic/setup.bash
-/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/urRobot/main_ur10.py
+    -open a terminal
+        conda activate frankapyenv
+        source /opt/ros/noetic/setup.bash
+        /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/urRobot/main_ur10.py
+
 
 
 ## record new motion for franka robot:
-#### 1st  Step: unlock robot
-	1) connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
-	2) unlock the robot and activate FCI
 
-#### 2nd Step: run frankapy
+### 1st  Step: unlock robot
+	-turn on the robot (wait until it has a solid yellow)
+	-connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
+	-unlock the robot
+	-the robot light should be blue
+	-unlock the robot and activate FCI
 
-open an terminal
+### 2nd Step: run frankapy
 
+   -open an terminal
 	conda activate frankapyenv
-	cd /home/mindlab/franka
-	bash run_frankapy.sh
+	bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
-#### 3nd Step: run this code
+### 3nd Step: run this code
 
-open another terminal 
+    -open another terminal 
+        conda activate frankapyenv
+	    source /opt/ros/noetic/setup.bash
+		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
+		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
 
-	conda activate frankapyenv
-	source /opt/ros/noetic/setup.bash
-	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
-
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankRobot/recordNewMotion.py
+	    /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/recordNewMotion.py

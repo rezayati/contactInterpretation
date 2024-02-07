@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 '''
+By Maryam Rezayati
 
+How to run:
 
 conda activate frankapyenv
-
 source /opt/ros/noetic/setup.bash
-
-python /home/mindlab/contactInterpretation/digitalGlove/digitalGloveNode.py
+/home/mindlab/miniconda3/envs/frankapyenv/bin/python /home/mindlab/contactInterpretation/dataLabeling/digitalGloveNode.py
 
 '''
 ## import required libraries 

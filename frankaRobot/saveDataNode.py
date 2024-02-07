@@ -11,15 +11,18 @@ Files Created:
 
 How to Run:
 1. Unlock the Robot:
-    - Connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33).
-    - Unlock the robot and activate FCI.
+	-turn on the robot (wait until it has a solid yellow)
+	-connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
+	-unlock the robot
+	-the robot light should be blue
+	-unlock the robot and activate FCI
 
 2. Connecting to the Robot (Running Frankapy):
-    - Open a terminal.
-        conda activate frankapyenv
-        bash /home/mindlab/franka/run_frankapy.sh.
+	-open an terminal
+		conda activate frankapyenv
+		bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
-3. Specify the Output Folder (PATH) - (line 56 in the code).
+3. Specify the Output Folder (PATH) - (line 48 in the code).
 
 4. Run the Program:
     - Open another terminal:
@@ -42,7 +45,7 @@ import datetime
 import os
 
 # Set the default PATH
-PATH = '/home/mindlab/'
+PATH = '/home/mindlab/contactInterpretation/frankaRobot/DATA/'
 
 # Prompt the user to enter a tag name for data labeling
 folder_name = input('Enter tag name: ')

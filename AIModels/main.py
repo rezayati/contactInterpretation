@@ -6,6 +6,7 @@
 #/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/AIModels/main.py
 
 from __future__ import print_function
+import os
 import argparse
 import torch
 import torch.nn as nn
@@ -23,7 +24,8 @@ from torch.utils.data import DataLoader
 import time
 
 # Path to save trained models
-path_name = '/home/mindlab/contactInterpretation/AIModels/trainedModels/'
+main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
+path_name = os.path.dirname(os.path.abspath(__file__))+'/trainedModels/'
 
 # model configuration
 #network_type = 'flatten'
@@ -31,8 +33,8 @@ network_type = 'main'
 num_features_lstm = 4
 train_all_data = False # train a model using all avaiable data
 
-#collision = False; localization = False; n_epochs = 15; batch_size = 64; num_classes = 2; lr = 0.001
-collision = True; localization = False; n_epochs = 120; batch_size = 64; num_classes = 2; lr = 0.001
+collision = False; localization = False; n_epochs = 15; batch_size = 64; num_classes = 2; lr = 0.001
+#collision = True; localization = False; n_epochs = 120; batch_size = 64; num_classes = 2; lr = 0.001
 #collision = False; localization = True; n_epochs = 110; batch_size =64; num_classes = 2; lr = 0.001
 
 # Define the neural network model
@@ -98,8 +100,8 @@ if __name__ == '__main__':
         torch.cuda.get_device_name()
     
     # Load data and create training and testing sets
-    training_data = create_tensor_dataset_without_torque('./dataset/realData/contact_detection_train.csv',num_classes=num_classes, collision=collision, localization= localization, num_features_lstm=num_features_lstm)
-    testing_data = create_tensor_dataset_without_torque('./dataset/realData/contact_detection_test.csv',num_classes=num_classes, collision=collision, localization= localization,num_features_lstm=num_features_lstm)
+    training_data = create_tensor_dataset_without_torque(main_path+'/dataset/realData/contact_detection_train.csv',num_classes=num_classes, collision=collision, localization= localization, num_features_lstm=num_features_lstm)
+    testing_data = create_tensor_dataset_without_torque(main_path+'/dataset/realData/contact_detection_test.csv',num_classes=num_classes, collision=collision, localization= localization,num_features_lstm=num_features_lstm)
 
     train_dataloader = DataLoader(training_data, batch_size=batch_size, shuffle= True)
     test_dataloader = DataLoader(testing_data, batch_size=batch_size, shuffle= True)

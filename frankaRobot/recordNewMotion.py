@@ -3,22 +3,25 @@ By Maryam Rezayati
 
 How to run?
 1. unlock robot
+	-turn on the robot (wait until it has a solid yellow)
 	-connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
+	-unlock the robot
+	-the robot light should be blue
 	-unlock the robot and activate FCI
-
+    
 2. run frankapy
    -open an terminal
 	conda activate frankapyenv
-	bash /home/mindlab/franka/run_frankapy.sh
+	bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 3. run this code
     -open another terminal 
-	conda activate frankapyenv
-	source /opt/ros/noetic/setup.bash
-	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+        conda activate frankapyenv
+	    source /opt/ros/noetic/setup.bash
+		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
+		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
 
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankRobot/recordNewMotion.py
+	    /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/recordNewMotion.py
 
 '''
 import numpy as np
@@ -26,8 +29,11 @@ import time
 import pandas as pd
 from frankapy import FrankaArm
 from threading import Thread
+import os
 
-main_path = '/home/mindlab/contactIntrpretation/frankaRobot/'
+
+main_path = os.path.dirname(os.path.abspath(__file__))+'/'
+print(main_path)
 
 def move_robot(fa: FrankaArm, duration: float):
     print('Thread_move_robot has started.', duration)

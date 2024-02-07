@@ -4,13 +4,16 @@ By Maryam Rezayati
 
 # How to run?
 1. unlock robot
+	-turn on the robot (wait until it has a solid yellow)
 	-connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
+	-unlock the robot
+	-the robot light should be blue
 	-unlock the robot and activate FCI
 
 2. run frankapy
 	-open an terminal
 		conda activate frankapyenv
-		bash /home/mindlab/franka/run_frankapy.sh
+		bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 3. run digital glove node
 	-open another temrinal
@@ -24,7 +27,7 @@ By Maryam Rezayati
 		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
 		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
 	
-		/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankRobot/main.py
+		/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/main.py
 
 5. run save data node
 	-open another terminal
@@ -39,6 +42,7 @@ sudo nano /home/mindlab/franka/franka-interface/catkin_ws/src/franka_ros_interfa
 """
 
 ## import required libraries 
+import os
 import numpy as np
 import pandas as pd
 import time
@@ -54,16 +58,23 @@ from frankapy import FrankaArm
 from franka_interface_msgs.msg import RobotState
 from threading import Thread
 from threading import Event
-from import_model import import_lstm_models
+from importModel import import_lstm_models
 
 # Set the main path
-main_path = '/home/mindlab/contactInterface/'
+main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
 
 # Define parameters for the LSTM models
 num_features_lstm = 4
-contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_06_30_2023_10:16:53.pth'
-collision_detection_path = main_path + 'AIModels/trainedModels/collisionDetection/trainedModel_06_30_2023_09:07:24.pth'
-localization_path = main_path + 'AIModels/trainedModels/localization/trainedModel_06_30_2023_09:08:08.pth'
+#contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_06_30_2023_10:16:53.pth'
+contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_01_24_2024_11:18:01.pth'
+
+#collision_detection_path = main_path + 'AIModels/trainedModels/collisionDetection/trainedModel_06_30_2023_09:07:24.pth'
+collision_detection_path = main_path + 'AIModels/trainedModels/collisionDetection/trainedModel_01_24_2024_11:12:30.pth'
+
+#localization_path = main_path + 'AIModels/trainedModels/localization/trainedModel_06_30_2023_09:08:08.pth'
+localization_path = main_path + 'AIModels/trainedModels/localization/trainedModel_01_24_2024_11:15:06.pth'
+
+
 window_length = 28
 features_num = 28
 dof = 7

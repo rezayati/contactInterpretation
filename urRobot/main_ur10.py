@@ -4,16 +4,16 @@ This version tries to have clear structure
 
 
 By Maryam Rezayati
-How to run?
-## 1st  Step: activate remote control from robot teach pandanent
+# How to run?
 
+1. activate remote control from robot teach pandanent
 
-## 2nd Step: run program
+2. run program
 
-open a terminal
-conda activate frankapyenv
-source /opt/ros/noetic/setup.bash
-/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/urRobot/main_ur10.py
+    -open a terminal
+        conda activate frankapyenv
+        source /opt/ros/noetic/setup.bash
+        /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/urRobot/main_ur10.py
 
 """
 
@@ -38,13 +38,17 @@ from import_model import import_lstm_models_old
 from rtde_receive import RTDEReceiveInterface as RTDEReceive
 from rtde_control import RTDEControlInterface
 
-main_path = '/home/mindlab/contactInterpretation/'
+main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
 
 num_features_lstm = 4
-contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_06_30_2023_10:16:53.pth'
+#contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_06_30_2023_10:16:53.pth'
+contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_01_24_2024_11:18:01.pth'
 
-collision_detection_path = main_path + 'AIModels/trainedModels/collisionDetection/trainedModel_06_30_2023_09:07:24.pth'
-localization_path = main_path + 'AIModels/trainedModels/localization/trainedModel_06_30_2023_09:08:08.pth'
+#collision_detection_path = main_path + 'AIModels/trainedModels/collisionDetection/trainedModel_06_30_2023_09:07:24.pth'
+collision_detection_path = main_path + 'AIModels/trainedModels/collisionDetection/trainedModel_01_24_2024_11:12:30.pth'
+
+#localization_path = main_path + 'AIModels/trainedModels/localization/trainedModel_06_30_2023_09:08:08.pth'
+localization_path = main_path + 'AIModels/trainedModels/localization/trainedModel_01_24_2024_11:15:06.pth'
 
 
 window_length = 28
