@@ -16,7 +16,9 @@ How to Run:
 
 2. Connecting to the Robot (Running Frankapy):
     - Open a terminal.
-    - Run the bash script: bash /home/mindlab/franka/run_frankapy.sh.
+        conda activate frankapyenv
+    - Run the bash script: 
+        bash /home/mindlab/franka/run_frankapy.sh.
 
 3. Specify the Output Folder (PATH) - (line 56 in the code).
 
