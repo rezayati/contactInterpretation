@@ -32,45 +32,54 @@ import pandas as pd
 from frankapy import FrankaArm
 from threading import Thread
 
-main_path= '/home/mindlab/contactIntrpretation/frankaRobot/'
+main_path = '/home/mindlab/contactIntrpretation/frankaRobot/'
 
 def move_robot(fa: FrankaArm, duration: float):
-    print('thread_move_robot is started ',duration)
+    print('Thread_move_robot has started.', duration)
     try:
-        fa.run_guide_mode( duration= duration )
+        fa.run_guide_mode(duration=duration)
     except Exception as e:
         print(e)
-    print('exit thread!')
+    print('Exit thread!')
 
 if __name__ == '__main__':
+    # Initialize FrankaArm
     fa = FrankaArm()
-    duration = input('How lond does it take to put the robot in the desired positions? (sec)   ')
-    duration = float(duration)
 
-    thread_move_robot = Thread(target= move_robot, args=[fa,duration])
-    
-    
+    # Get user input for the duration of robot motion
+    duration = float(input('How long does it take to put the robot in the desired positions? (sec)   '))
+
+    # Create a thread for robot motion
+    thread_move_robot = Thread(target=move_robot, args=[fa, duration])
+
+    # Lists to store joint data
     joints = []
-    state = 'no'
-    while(state!='yes'):
-        
-        state = input('are you ready to start? (yes/no)   ')
-        if state == 'yes':
-            thread_move_robot.start()
-            start_time = time.time()
-            counter = 0
-            while((time.time()-start_time) < int(duration)):
-                state = input('press enter when robot is in a desired position:   ')
-                dummy = fa.get_joints()
-                #dummy = np.zeros(7)
-                dummy[6] += np.deg2rad(45)
-                print('\n',dummy)
-                joints.append(dummy)
-                counter += 1
-                print(counter, 'poses are selected. All positions will be saved in a file when this program ends. \n')
-            df = pd.DataFrame(data=np.squeeze(joints))
-            named_tuple = time.localtime() 
 
-            df.to_csv(main_path+'robotMotionJointData'+str(time.strftime("_%m_%d_%Y_%H:%M:%S", named_tuple))+'.csv')
-            print('data are saved in ', main_path+'robotMotionJointData'+str(time.strftime("_%m_%d_%Y_%H:%M:%S", named_tuple))+'.csv')
-            exit()
+    # Prompt user to start the process
+    state = input('Are you ready to start? (yes/no)   ')
+
+    if state == 'yes':
+        # Start the thread for robot motion
+        thread_move_robot.start()
+        start_time = time.time()
+        counter = 0
+
+        # Manual input of desired robot positions
+        while (time.time() - start_time) < duration:
+            state = input('Press enter when the robot is in a desired position:   ')
+            dummy = fa.get_joints()
+            dummy[6] += np.deg2rad(45)
+            print('\n', dummy)
+            joints.append(dummy)
+            counter += 1
+            print(counter, 'poses are selected. All positions will be saved in a file when this program ends.\n')
+
+        # Create a DataFrame and save joint data to a CSV file
+        df = pd.DataFrame(data=np.squeeze(joints))
+        named_tuple = time.localtime()
+        filename = main_path + 'robotMotionJointData' + str(time.strftime("_%m_%d_%Y_%H:%M:%S", named_tuple)) + '.csv'
+        df.to_csv(filename)
+        print('Data are saved in', filename)
+
+        # End the program
+        exit()
