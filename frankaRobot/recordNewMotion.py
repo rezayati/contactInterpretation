@@ -11,8 +11,7 @@ How to run?
 open an terminal
 
 	conda activate frankapyenv
-	cd /home/mindlab/franka
-	bash run_frankapy.sh
+	bash /home/mindlab/franka/run_frankapy.sh
 
 ## 3nd Step: run this code
 
