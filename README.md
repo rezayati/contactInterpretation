@@ -40,36 +40,36 @@ Universal Robots RTDE: https://sdurobotics.gitlab.io/ur_rtde/
 
 open an terminal
 
-		conda activate frankapyenv
-		bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
+	conda activate frankapyenv
+	bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 #### 3nd Step: run digital glove node
 
 open another temrinal
 
-		source /opt/ros/noetic/setup.bash
-		/home/mindlab/miniconda3/envs/frankapyenv/bin/python /home/mindlab/contactInterpretation/dataLabeling/digitalGloveNode.py
+	source /opt/ros/noetic/setup.bash
+	/home/mindlab/miniconda3/envs/frankapyenv/bin/python /home/mindlab/contactInterpretation/dataLabeling/digitalGloveNode.py
 
 #### 4th Step: run robot node
 
 open another terminal 
 
-		conda activate frankapyenv
-		source /opt/ros/noetic/setup.bash
-		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+	conda activate frankapyenv
+	source /opt/ros/noetic/setup.bash
+	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
+	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
 	
-		/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/main.py
+	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/main.py
 
 #### 5th Step: run save data node
 
 open another terminal
 
-		source /opt/ros/noetic/setup.bash
-		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
-	
-		/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/saveDataNode.py
+	source /opt/ros/noetic/setup.bash
+	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
+	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+
+	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/saveDataNode.py
 
 
 ### to chage publish rate of frankastate go to : 
@@ -85,9 +85,9 @@ sudo nano /home/mindlab/franka/franka-interface/catkin_ws/src/franka_ros_interfa
 
 open a terminal
 
-        conda activate frankapyenv
-        source /opt/ros/noetic/setup.bash
-        /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/urRobot/main_ur10.py
+	conda activate frankapyenv
+	source /opt/ros/noetic/setup.bash
+	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/urRobot/main_ur10.py
 
 
 
@@ -111,9 +111,9 @@ open an terminal
 
 open another terminal 
 
-        conda activate frankapyenv
-	    source /opt/ros/noetic/setup.bash
-		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
-
-	    /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/recordNewMotion.py
+	conda activate frankapyenv
+	source /opt/ros/noetic/setup.bash
+	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
+	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+	
+	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/recordNewMotion.py
