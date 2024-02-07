@@ -7,16 +7,12 @@ How to run?
 	2) unlock the robot and activate FCI
 
 ## 2nd Step: run frankapy
-
-open an terminal
-
+   -open an terminal
 	conda activate frankapyenv
 	bash /home/mindlab/franka/run_frankapy.sh
 
 ## 3nd Step: run this code
-
-open another terminal 
-
+    -open another terminal 
 	conda activate frankapyenv
 	source /opt/ros/noetic/setup.bash
 	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
