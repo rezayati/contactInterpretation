@@ -78,7 +78,7 @@ if __name__ == '__main__':
         # Create a DataFrame and save joint data to a CSV file
         df = pd.DataFrame(data=np.squeeze(joints))
         named_tuple = time.localtime()
-        filename = main_path + 'robotMotionJointData' + str(time.strftime("_%m_%d_%Y_%H:%M:%S", named_tuple)) + '.csv'
+        filename = main_path + '/robotMotionPoints/robotMotionJointData' + str(time.strftime("_%m_%d_%Y_%H:%M:%S", named_tuple)) + '.csv'
         df.to_csv(filename)
         print('Data are saved in', filename)
 
