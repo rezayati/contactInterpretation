@@ -16,11 +16,11 @@ canlib
 
 ### Franka Emika Panda
 
-franka-interface: Welcome to franka-interface’s Documentation! — franka-interface 1.0.0 documentation (iamlab-cmu.github.io)
-![image](https://github.com/MindLabZHAW/contactInterpretation/assets/10871265/d7c654f5-4e37-4f47-b552-87ba16e3cf78)
+franka-interface: https://iamlab-cmu.github.io/franka-interface/ 
 
-frankapy: Welcome to FrankaPy’s Documentation! — frankapy 1.0.0 documentation (iamlab-cmu.github.io)
-![image](https://github.com/MindLabZHAW/contactInterpretation/assets/10871265/fd57b7fb-077c-4a1a-a05a-048f2ba25365)
+
+frankapy: https://iamlab-cmu.github.io/frankapy/ 
+
 
 ### Universal Robots
 Universal Robots RTDE: https://sdurobotics.gitlab.io/ur_rtde/
@@ -41,14 +41,15 @@ Universal Robots RTDE: https://sdurobotics.gitlab.io/ur_rtde/
 open an terminal
 
 	conda activate frankapyenv
-	bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
+	bash robotAPI/frankapy/bash_scripts/start_control_pc.sh -i localhost
+
 
 #### 3nd Step: run digital glove node
 
 open another temrinal
 
 	source /opt/ros/noetic/setup.bash
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python /home/mindlab/contactInterpretation/dataLabeling/digitalGloveNode.py
+	$HOME/miniconda/envs/frankapyenv/bin/python dataLabeling/digitalGloveNode.py
 
 #### 4th Step: run robot node
 
@@ -56,24 +57,25 @@ open another terminal
 
 	conda activate frankapyenv
 	source /opt/ros/noetic/setup.bash
-	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+	source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
+	source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 	
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/main.py
+	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/main.py
 
 #### 5th Step: run save data node
 
 open another terminal
 
+	conda activate frankapyenv
 	source /opt/ros/noetic/setup.bash
-	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+	source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
+	source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/saveDataNode.py
+	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/saveDataNode.py
 
 
 ### to chage publish rate of frankastate go to : 
-sudo nano /home/mindlab/franka/franka-interface/catkin_ws/src/franka_ros_interface/launch/franka_ros_interface.launch
+sudo nano robotAPI/franka-interface/catkin_ws/src/franka_ros_interface/launch/franka_ros_interface.launch
 
 
 ### UR Robot
@@ -87,7 +89,7 @@ open a terminal
 
 	conda activate frankapyenv
 	source /opt/ros/noetic/setup.bash
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/urRobot/main_ur10.py
+	$HOME/miniconda/envs/frankapyenv/bin/python3 urRobot/main_ur10.py
 
 
 
@@ -105,7 +107,7 @@ open a terminal
 open an terminal
 
 	conda activate frankapyenv
-	bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
+	bash robotAPI/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 ### 3nd Step: run this code
 
@@ -113,7 +115,7 @@ open another terminal
 
 	conda activate frankapyenv
 	source /opt/ros/noetic/setup.bash
-	source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-	source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+	source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
+	source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 	
-	/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/recordNewMotion.py
+	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/recordNewMotion.py

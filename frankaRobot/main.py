@@ -3,42 +3,35 @@
 By Maryam Rezayati
 
 # How to run?
-1. unlock robot
+
+#### 1st  Step: unlock robot
 	-turn on the robot (wait until it has a solid yellow)
 	-connect to the robot desk with the ID (172.16.0.2 or 192.168.15.33)
 	-unlock the robot
 	-the robot light should be blue
 	-unlock the robot and activate FCI
 
-2. run frankapy
-	-open an terminal
-		conda activate frankapyenv
-		bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
+#### 2nd Step: run frankapy
 
-3. run digital glove node
-	-open another temrinal
-		source /opt/ros/noetic/setup.bash
-		/home/mindlab/miniconda3/envs/frankapyenv/bin/python /home/mindlab/contactInterpretation/dataLabeling/digitalGloveNode.py
+open an terminal
 
-4. run robot node
-	-open another terminal 
-		conda activate frankapyenv
-		source /opt/ros/noetic/setup.bash
-		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+	conda activate frankapyenv
+	bash robotAPI/frankapy/bash_scripts/start_control_pc.sh -i localhost
+
+
+#### 3rd Step: run robot node
+
+open another terminal 
+
+	conda activate frankapyenv
+	source /opt/ros/noetic/setup.bash
+	source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
+	source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 	
-		/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/main.py
-
-5. run save data node
-	-open another terminal
-		source /opt/ros/noetic/setup.bash
-		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
-	
-		/home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/saveDataNode.py
+	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/main.py
 
 # to chage publish rate of frankastate go to : 
-sudo nano /home/mindlab/franka/franka-interface/catkin_ws/src/franka_ros_interface/launch/franka_ros_interface.launch
+sudo nano robotAPI/franka-interface/catkin_ws/src/franka_ros_interface/launch/franka_ros_interface.launch
 """
 
 ## import required libraries 

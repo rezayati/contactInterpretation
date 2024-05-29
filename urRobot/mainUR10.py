@@ -13,7 +13,7 @@ By Maryam Rezayati
     -open a terminal
         conda activate frankapyenv
         source /opt/ros/noetic/setup.bash
-        /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/urRobot/mainUR10.py
+        $HOME/miniconda/envs/frankapyenv/bin/python3 urRobot/mainUR10.py
 
 """
 

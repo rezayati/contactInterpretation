@@ -12,16 +12,16 @@ How to run?
 2. run frankapy
    -open an terminal
 	conda activate frankapyenv
-	bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
+	bash robotAPI/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 3. run this code
     -open another terminal 
         conda activate frankapyenv
 	    source /opt/ros/noetic/setup.bash
-		source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-		source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
+		source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
+		source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 
-	    /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/recordNewMotion.py
+	    $HOME/miniconda/envs/frankapyenv/bin/python3 /frankaRobot/recordNewMotion.py
 
 '''
 import numpy as np

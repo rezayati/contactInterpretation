@@ -20,7 +20,7 @@ How to Run:
 2. Connecting to the Robot (Running Frankapy):
 	-open an terminal
 		conda activate frankapyenv
-		bash /home/mindlab/franka/frankapy/bash_scripts/start_control_pc.sh -i localhost
+		bash robotAPI/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 3. Specify the Output Folder (PATH) - (line 48 in the code).
 
@@ -28,9 +28,9 @@ How to Run:
     - Open another terminal:
         conda activate frankapyenv
         source /opt/ros/noetic/setup.bash
-        source /home/mindlab/franka/franka-interface/catkin_ws/devel/setup.bash --extend
-        source /home/mindlab/franka/frankapy/catkin_ws/devel/setup.bash --extend
-        /home/mindlab/miniconda3/envs/frankapyenv/bin/python3 /home/mindlab/contactInterpretation/frankaRobot/saveDataNode.py
+        source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
+        source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
+        $HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/saveDataNode.py
 """
 
 ## Import required libraries 
@@ -45,7 +45,7 @@ import datetime
 import os
 
 # Set the default PATH
-PATH = '/home/mindlab/contactInterpretation/frankaRobot/DATA/'
+PATH = 'frankaRobot/DATA/'
 
 # Prompt the user to enter a tag name for data labeling
 folder_name = input('Enter tag name: ')
@@ -58,7 +58,7 @@ class LogData:
         
         # Create a folder for saving data
         self.PATH = PATH + folder_name
-        os.mkdir(self.PATH)
+        os.makedirs(self.PATH)
         print("Directory '%s' created" % self.PATH)
 
         # Create empty files for saving data
