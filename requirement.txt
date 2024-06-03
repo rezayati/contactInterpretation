@@ -7,3 +7,5 @@ pandas==1.1.5
 torchvision==0.11.2
 
 torchmetrics==0.8.2
+
+pyserial == 3.5

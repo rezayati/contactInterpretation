@@ -31,7 +31,7 @@ open another terminal
 	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/main.py
 
 # to chage publish rate of frankastate go to : 
-sudo nano robotAPI/franka-interface/catkin_ws/src/franka_ros_interface/launch/franka_ros_interface.launch
+sudo nano /franka-interface/catkin_ws/src/franka_ros_interface/launch/franka_ros_interface.launch
 """
 
 ## import required libraries 

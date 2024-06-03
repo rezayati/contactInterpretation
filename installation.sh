@@ -158,6 +158,7 @@ else
     cd $FRANKAPY_DIR
 fi
 
+pip install  ur_rtde
 
 echo "Installation complete. Don't forget to source your ROS environment:"
 echo "source /opt/ros/$ROS_VERSION/setup.bash"

@@ -38,8 +38,8 @@ from importModel import import_lstm_models_old
 from rtde_receive import RTDEReceiveInterface as RTDEReceive
 from rtde_control import RTDEControlInterface
 
-robot_ip = '192.168.1.20'
-frequency = 100
+robot_ip = '192.168.15.10'
+frequency = 200
 
 main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
 joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_02_19_2024_15:14:01.csv'
@@ -61,7 +61,7 @@ features_num = dof*4
 
 k= [-2.39588348e-15,  11, 11, 10, -1.08, 1]
 #k= [-1, 1, 1, 1, -1, 1]
-k=0.7
+k=1.4
 # load model
 
 model_contact, labels_map_contact, num_features_lstm_0 = import_lstm_models(PATH=contact_detection_path)
@@ -207,8 +207,8 @@ if __name__ == "__main__":
     try:
         while  not rospy.is_shutdown():
             for i in range(joints.shape[0]):
-                robot.moveL(np.array(joints.iloc[i]), speed=0.15, acceleration=0.05)
-                #time.sleep(1)
+                #robot.moveL(np.array(joints.iloc[i]), speed=0.15, acceleration=0.05)
+                time.sleep(1)
     except KeyboardInterrupt:
         print('hi')
         robot.stopJ()
