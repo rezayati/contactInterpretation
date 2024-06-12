@@ -19,7 +19,7 @@ import time
 from rtde_receive import RTDEReceiveInterface as RTDEReceive
 from rtde_control import RTDEControlInterface
 
-robot_ip = '192.168.1.20'
+robot_ip = '192.168.15.10'
 frequency = 100
 robotType= 'UR5'
 main_path = os.path.dirname(os.path.abspath(__file__))+'/'

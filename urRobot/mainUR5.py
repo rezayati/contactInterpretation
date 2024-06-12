@@ -22,7 +22,7 @@ import os
 import numpy as np
 import pandas as pd
 import time
-
+import signal
 import torch
 from torchvision import transforms
 
@@ -42,7 +42,7 @@ robot_ip = '192.168.15.10'
 frequency = 200
 
 main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
-joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_02_19_2024_15:14:01.csv'
+joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_06_10_2024_10:00:22.csv'
 
 num_features_lstm = 4
 #contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_06_30_2023_10:16:53.pth'
@@ -59,9 +59,9 @@ window_length = 28
 dof = 6
 features_num = dof*4
 
-k= [-2.39588348e-15,  11, 11, 10, -1.08, 1]
+k= [1.35,  1.361, 1.355, 0.957, 0.865, 0.893]
 #k= [-1, 1, 1, 1, -1, 1]
-k=1.4
+#k=1.2
 # load model
 
 model_contact, labels_map_contact, num_features_lstm_0 = import_lstm_models(PATH=contact_detection_path)
@@ -94,6 +94,8 @@ model_msg = Floats()
 
 def contact_detection(data_object:RTDEReceive, event: Event):
     global window, model_pub, big_time_digits
+    collision = None
+    localization = None
     
     rate = rospy.Rate(frequency)
     while  (not rospy.is_shutdown() )and not (event.is_set()):    
@@ -110,6 +112,7 @@ def contact_detection(data_object:RTDEReceive, event: Event):
 
         #TODO: external torque should be calculated
         tau_J = np.array(data_object.getTargetMoment())
+        #tau_J = np.multiply(i_actual, k2)
         tau_ext = np.array( i_desired - i_actual)
         tau_ext = np.multiply(tau_ext, k)
 
@@ -170,18 +173,16 @@ def contact_detection(data_object:RTDEReceive, event: Event):
         model_pub.publish(model_msg)
         rate.sleep()
 
-
-
-
-
-def save_data():
-	#TODO: save data!
-	pass
-
+def signal_handler(sig, frame):
+    print('Stopping the robot...')
+    global running
+    running = False
 
 
 if __name__ == "__main__":
-    global model_pub, big_time_digits
+
+    global model_pub, big_time_digits, running
+    signal.signal(signal.SIGINT, signal_handler)
     event = Event()
     event.clear()
     rospy.init_node('ur_robot_data')
@@ -191,11 +192,19 @@ if __name__ == "__main__":
 
     # create robot controller instance
     robot = RTDEControlInterface(robot_ip)
-
+    print(robot.reuploadScript())
+    print(robot.isConnected())
     # connecting to the robot to read data
     data_object = RTDEReceive(robot_ip, frequency)
     #print('moment: ', data_object.getTargetMoment())
     #print('current: ', data_object.getActualCurrent())
+    
+    running = True
+    i = 0
+    file_name= input('ENTER DATA TAG NAME:  ')
+    file_name = 'urRobot/DATA/'+file_name
+    os.makedirs(file_name, exist_ok=True)
+    file_name = file_name + '/'+ str(rospy.Time.now().to_sec()) + '.txt'
     
     detection_thread = Thread(target= contact_detection, args = (data_object,event, ))
     print('waiting for the models to be loaded............ \n')
@@ -204,16 +213,27 @@ if __name__ == "__main__":
 
     joints = pd.read_csv(joints_data_path)
     print(joints.head())
+
+    data_object.startFileRecording(file_name )
+
     try:
-        while  not rospy.is_shutdown():
-            for i in range(joints.shape[0]):
-                #robot.moveL(np.array(joints.iloc[i]), speed=0.15, acceleration=0.05)
-                time.sleep(1)
+        while  running and not rospy.is_shutdown() and robot.isConnected():
+            robot.moveL(np.array(joints.iloc[i]), speed=0.15, acceleration=0.05)
+            #time.sleep(1)
+            if i<joints.shape[0]-1:
+                i=i+1
+            else:
+                i=0
     except KeyboardInterrupt:
-        print('hi')
+        print('Interrupted by user')
+    except Exception as e:
+        print(f'An unexpected error occurred: {e}')
+    finally:
+        # Stop the robot and cleanup
+        print('Cleaning up resources...')
         robot.stopJ()
         robot.stopScript()
         event.set()
-            
-
-detection_thread.join(timeout=1)
+        detection_thread.join(timeout=1)
+        data_object.stopFileRecording()
+        print('Program stopped.')
