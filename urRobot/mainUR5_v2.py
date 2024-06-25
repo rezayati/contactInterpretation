@@ -20,7 +20,7 @@ robot_ip = '192.168.15.10'
 frequency = 200
 
 main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
-joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_06_18_2024_17:37:39.csv'
+joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_06_10_2024_10:00:22.csv'
 data_path = main_path + '/urRobot/DATA/robot_data/'
 
 contact_detection_path = main_path + 'AIModels/trainedModels/contactDetection/trainedModel_01_24_2024_11:18:01.pth'
@@ -63,7 +63,8 @@ def check_rtde_connection(rtde_object: RTDEReceive, event: Event):
 
 def contact_detection(data_object: RTDEReceive, event: Event):
     global window, model_pub, big_time_digits, connection_thread
-    
+    collision = -1
+    localization = -1
     # Start a thread to monitor RTDE connection
     connection_thread = Thread(target=check_rtde_connection, args=(data_object, event))
     connection_thread.start()
@@ -116,7 +117,7 @@ def contact_detection(data_object: RTDEReceive, event: Event):
 
             contact = output.cpu().numpy()[0]
             if contact == 1:
-                with torch.no_grad():
+                '''with torch.no_grad():
                     model_out = model_collision(data_input)
                     model_out = model_out.detach()
                     output = torch.argmax(model_out, dim=1)
@@ -125,7 +126,7 @@ def contact_detection(data_object: RTDEReceive, event: Event):
                     model_out = model_localization(data_input)
                     model_out = model_out.detach()
                     output = torch.argmax(model_out, dim=1)
-                    localization = output.cpu().numpy()[0]
+                    localization = output.cpu().numpy()[0]'''
 
                 detection_duration = rospy.get_time() - start_time
                 rospy.loginfo('Detection duration: %f, There is a contact', detection_duration)
