@@ -45,7 +45,6 @@ if __name__ == '__main__':
         state = input('Press enter when the robot is in a desired position or type exit:   ')
         #dummy = data_object.getActualQ()
         dummy = data_object.getActualTCPPose()
-
         print('\n', dummy)
         joints.append(dummy)
         counter += 1

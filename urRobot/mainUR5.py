@@ -15,6 +15,14 @@ By Maryam Rezayati
         source /opt/ros/noetic/setup.bash
         $HOME/miniconda/envs/frankapyenv/bin/python3 urRobot/mainUR5.py
 
+3. run ROS on windows
+4. run saveDataNode.pa
+
+  -open a terminal
+        conda activate frankapyenv
+        source /opt/ros/noetic/setup.bash
+        $HOME/miniconda/envs/frankapyenv/bin/python3 urRobot/saveDataNode.py
+
 """
 
 ## import required libraries 
@@ -42,8 +50,11 @@ robot_ip = '192.168.15.10'
 frequency = 200
 
 main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
-joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_06_10_2024_10:00:22.csv'
+#joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_06_10_2024_10:00:22.csv'
+joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_06_18_2024_17:37:39.csv'
 
+
+data_path = main_path+'/urRobot/DATA/robot_data/'
 num_features_lstm = 4
 #contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_06_30_2023_10:16:53.pth'
 contact_detection_path= main_path +'AIModels/trainedModels/contactDetection/trainedModel_01_24_2024_11:18:01.pth'
@@ -202,9 +213,10 @@ if __name__ == "__main__":
     running = True
     i = 0
     file_name= input('ENTER DATA TAG NAME:  ')
-    file_name = 'urRobot/DATA/'+file_name
+    file_name = data_path+file_name
     os.makedirs(file_name, exist_ok=True)
     file_name = file_name + '/'+ str(rospy.Time.now().to_sec()) + '.txt'
+    #file_name = file_name+'/all_data.txt'
     
     detection_thread = Thread(target= contact_detection, args = (data_object,event, ))
     print('waiting for the models to be loaded............ \n')
@@ -218,7 +230,7 @@ if __name__ == "__main__":
 
     try:
         while  running and not rospy.is_shutdown() and robot.isConnected():
-            robot.moveL(np.array(joints.iloc[i]), speed=0.15, acceleration=0.05)
+            robot.moveL(np.array(joints.iloc[i]), speed=0.25, acceleration=0.2)
             #time.sleep(1)
             if i<joints.shape[0]-1:
                 i=i+1
