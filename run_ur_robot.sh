@@ -30,11 +30,6 @@ gnome-terminal --working-directory="$dir_path" --title="Save Data Node" -- bash 
 pid3=$!
 sleep 1
 
-# Arrange the terminals using wmctrl
-wmctrl -r "ROS Noetic" -e 0,0,0,800,600
-wmctrl -r "Main UR5" -e 0,800,0,800,600
-wmctrl -r "Digital Glove Node" -e 0,0,600,800,600
-wmctrl -r "Save Data Node" -e 0,800,600,800,600
 
 # Function to stop all terminals
 stop_terminals() {

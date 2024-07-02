@@ -243,7 +243,6 @@ if __name__ == "__main__":
     finally:
         # Stop the robot and cleanup
         print('Cleaning up resources...')
-        robot.stopJ()
         robot.stopScript()
         event.set()
         detection_thread.join(timeout=1)

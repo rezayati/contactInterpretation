@@ -59,6 +59,7 @@ def check_rtde_connection(rtde_object: RTDEReceive, event: Event):
         if not rtde_object.isConnected():
             print("RTDE connection lost. Attempting to reconnect...")
             rtde_object.reconnect()
+            event.set()
         time.sleep(1)  # Adjust sleep duration as needed
 
 def contact_detection(data_object: RTDEReceive, event: Event):
@@ -66,8 +67,8 @@ def contact_detection(data_object: RTDEReceive, event: Event):
     collision = -1
     localization = -1
     # Start a thread to monitor RTDE connection
-    connection_thread = Thread(target=check_rtde_connection, args=(data_object, event))
-    connection_thread.start()
+    #connection_thread = Thread(target=check_rtde_connection, args=(data_object, event))
+    #connection_thread.start()
     
     rate = rospy.Rate(frequency)
     while not rospy.is_shutdown() and not event.is_set():
@@ -192,18 +193,18 @@ if __name__ == "__main__":
                 i = i + 1
             else:
                 i = 0
-
+        event.set()
+        detection_thread.join(timeout=1)
     except KeyboardInterrupt:
         print('Interrupted by user')
     except Exception as e:
         print(f'An unexpected error occurred: {e}')
     finally:
         print('Cleaning up resources...')
-        robot.stopJ()
         robot.stopScript()
         event.set()
         detection_thread.join(timeout=1)
         data_object.stopFileRecording()
         print('Program stopped.')
 
-    connection_thread.join(timeout=1)  # Ensure connection thread is terminated cleanly
+    #connection_thread.join(timeout=1)  # Ensure connection thread is terminated cleanly
