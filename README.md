@@ -40,7 +40,8 @@ Universal Robots RTDE: https://sdurobotics.gitlab.io/ur_rtde/
 
 open an terminal
 
-	conda activate frankapyenv
+	## conda activate frankapyenv
+	conda activate frankaenv
 	bash robotAPI/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 
@@ -49,29 +50,29 @@ open an terminal
 open another temrinal
 
 	source /opt/ros/noetic/setup.bash
-	$HOME/miniconda/envs/frankapyenv/bin/python dataLabeling/digitalGloveNode.py
+	$HOME/miniconda/envs/frankaenv/bin/python dataLabeling/digitalGloveNode.py
 
 #### 4th Step: run robot node
 
 open another terminal 
 
-	conda activate frankapyenv
+	conda activate frankaenv
 	source /opt/ros/noetic/setup.bash
 	source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
 	source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 	
-	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/main.py
+	$HOME/miniconda/envs/frankaenv/bin/python3 frankaRobot/main.py
 
 #### 5th Step: run save data node
 
 open another terminal
 
-	conda activate frankapyenv
+	conda activate frankaenv
 	source /opt/ros/noetic/setup.bash
 	source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
 	source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 
-	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/saveDataNode.py
+	$HOME/miniconda/envs/frankaenv/bin/python3 frankaRobot/saveDataNode.py
 
 
 ### to chage publish rate of frankastate go to : 
@@ -87,9 +88,9 @@ sudo nano robotAPI/franka-interface/catkin_ws/src/franka_ros_interface/launch/fr
 
 open a terminal
 
-	conda activate frankapyenv
+	conda activate frankaenv
 	source /opt/ros/noetic/setup.bash
-	$HOME/miniconda/envs/frankapyenv/bin/python3 urRobot/main_ur10.py
+	$HOME/miniconda/envs/frankaenv/bin/python3 urRobot/main_ur10.py
 
 
 
@@ -106,16 +107,16 @@ open a terminal
 
 open an terminal
 
-	conda activate frankapyenv
+	conda activate frankaenv
 	bash robotAPI/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 ### 3nd Step: run this code
 
 open another terminal 
 
-	conda activate frankapyenv
+	conda activate frankaenv
 	source /opt/ros/noetic/setup.bash
 	source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
 	source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 	
-	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/recordNewMotion.py
+	$HOME/miniconda/envs/frankaenv/bin/python3 frankaRobot/recordNewMotion.py
