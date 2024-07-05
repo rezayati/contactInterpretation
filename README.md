@@ -41,7 +41,7 @@ Universal Robots RTDE: https://sdurobotics.gitlab.io/ur_rtde/
 open an terminal
 
 	## conda activate frankapyenv
-	conda activate frankaenv
+	conda activate frankapyenv
 	bash robotAPI/frankapy/bash_scripts/start_control_pc.sh -i localhost
 
 
@@ -50,29 +50,29 @@ open an terminal
 open another temrinal
 
 	source /opt/ros/noetic/setup.bash
-	$HOME/miniconda/envs/frankaenv/bin/python dataLabeling/digitalGloveNode.py
+	$HOME/miniconda/envs/frankapyenv/bin/python dataLabeling/digitalGloveNode.py
 
 #### 4th Step: run robot node
 
 open another terminal 
 
-	conda activate frankaenv
+	conda activate frankapyenv
 	source /opt/ros/noetic/setup.bash
 	source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
 	source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 	
-	$HOME/miniconda/envs/frankaenv/bin/python3 frankaRobot/main.py
+	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/main.py
 
 #### 5th Step: run save data node
 
 open another terminal
 
-	conda activate frankaenv
+	conda activate frankapyenv
 	source /opt/ros/noetic/setup.bash
 	source robotAPI/franka-interface/catkin_ws/devel/setup.bash --extend
 	source robotAPI/frankapy/catkin_ws/devel/setup.bash --extend
 
-	$HOME/miniconda/envs/frankaenv/bin/python3 frankaRobot/saveDataNode.py
+	$HOME/miniconda/envs/frankapyenv/bin/python3 frankaRobot/saveDataNode.py
 
 
 ### to chage publish rate of frankastate go to : 
