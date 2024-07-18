@@ -11,9 +11,9 @@ mkfifo /tmp/shared_input2
 cmd0="source /opt/ros/noetic/setup.bash; roscore"
 
 # Command to be executed in each terminal, including 'conda init'
-cmd1="source $(conda info --base)/etc/profile.d/conda.sh; conda init bash; conda activate frankapyenv; source /opt/ros/noetic/setup.bash; $HOME/miniconda3/envs/franka/bin/python3 urRobot/mainUR5_v2.py < /tmp/shared_input1"
-cmd2="source $(conda info --base)/etc/profile.d/conda.sh; conda init bash; conda activate frankapyenv; source /opt/ros/noetic/setup.bash; $HOME/miniconda3/envs/franka/bin/python dataLabeling/digitalGloveNodeUSB.py"
-cmd3="source $(conda info --base)/etc/profile.d/conda.sh; conda init bash; conda activate frankapyenv; source /opt/ros/noetic/setup.bash; $HOME/miniconda3/envs/franka/bin/python3 urRobot/saveDataNode.py < /tmp/shared_input2"
+cmd1="source $(conda info --base)/etc/profile.d/conda.sh; conda init bash; conda activate franka; source /opt/ros/noetic/setup.bash; $HOME/miniconda3/envs/franka/bin/python3 urRobot/mainUR5_v2.py < /tmp/shared_input1"
+cmd2="source $(conda info --base)/etc/profile.d/conda.sh; conda init bash; conda activate franka; source /opt/ros/noetic/setup.bash; $HOME/miniconda3/envs/franka/bin/python dataLabeling/digitalGloveNodeUSB.py"
+cmd3="source $(conda info --base)/etc/profile.d/conda.sh; conda init bash; conda activate franka; source /opt/ros/noetic/setup.bash; $HOME/miniconda3/envs/franka/bin/python3 urRobot/saveDataNode.py < /tmp/shared_input2"
 
 # Open new terminals with specific titles and run the commands
 gnome-terminal --working-directory="$dir_path" --title="ROS Noetic" -- bash -c "$cmd0; exec bash" &

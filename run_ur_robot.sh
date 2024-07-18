@@ -30,25 +30,15 @@ gnome-terminal --working-directory="$dir_path" --title="Save Data Node" -- bash 
 pid3=$!
 sleep 1
 
-
-# Function to stop all terminals
-stop_terminals() {
-    kill $pid0 $pid1 $pid2 $pid3
-    echo "Terminals stopped and closed."
-}
-
 # Arrange the terminals using wmctrl
 wmctrl -r "ROS Noetic" -e 0,0,0,800,600
 wmctrl -r "Main UR5" -e 0,800,0,800,600
 wmctrl -r "Digital Glove Node" -e 0,0,600,800,600
 wmctrl -r "Save Data Node" -e 0,800,600,800,600
 
-# Trap function to call stop_terminals on exit
-trap stop_terminals EXIT
 
 # Read input from the main terminal and broadcast it to the named pipes using tee
 echo "Enter the shared input: "
 cat | tee /tmp/shared_input1 > /tmp/shared_input2
 
-# Clean up
-rm /tmp/shared_input1 /tmp/shared_input2
+exit
