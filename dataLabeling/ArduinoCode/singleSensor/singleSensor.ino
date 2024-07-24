@@ -68,17 +68,17 @@ unsigned int data[5] = {0, 0, 0, 0, 0};
 unsigned int data_old[5] = {0, 0, 0, 0, 0};
 //unsigned int fingers[5] = {A3, 12, A0, A1, A2};
 
-%configure the pinout according to your hardware setup
+//%configure the pinout according to your hardware setup
 
-unsigned int fingers[5] = {A2, A1, A0, digital_pin, A3};
+unsigned int fingers[1] = {A2};
 
 int adc_data;
 #define alpha  0.7
 
-#define finger_numbers 5
+#define finger_numbers 1
 #define show_raw_data 0 // change it to 1 for showing the raw data
 #define serial_on 0 // change it to 1 for prining data on serial monitor
-#define limit_val 10
+#define limit_val 1019
 
 bool contactState = false;
 
@@ -122,5 +122,3 @@ void loop()
 }
 
 // END FILE
-
-
