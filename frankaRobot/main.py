@@ -71,7 +71,8 @@ localization_path = main_path + 'AIModels/trainedModels/localization/trainedMode
 window_length = 28
 features_num = 28
 dof = 7
-
+k=0.25 #panda_dummy
+k = 1
 # Define paths for joint motion data
 joints_data_path = main_path + 'frankaRobot/robotMotionPoints/robotMotionJointData.csv'
 
@@ -105,7 +106,7 @@ def contact_detection(data):
 	e_dq = np.array(data.dq_d ) - np.array(data.dq)
 	tau_J = np.array(data.tau_J) # we also have tau_J_d
 	tau_ext = np.array(data.tau_ext_hat_filtered)
-	tau_ext = np.multiply(tau_ext, 0.5)
+	tau_ext = np.multiply(tau_ext, k)
 
 	new_row = np.hstack((tau_J, tau_ext, e_q, e_dq))
 	new_row = new_row.reshape((1,features_num))
@@ -181,8 +182,8 @@ def move_robot(fa:FrankaArm, event: Event):
 	while True:	
 		try:	
 			for i in range(joints.shape[0]):
-				fa.goto_joints(np.array(joints.iloc[i]),ignore_virtual_walls=True,duration=4)
-				#time.sleep(0.01)
+				#fa.goto_joints(np.array(joints.iloc[i]),ignore_virtual_walls=True,duration=4)
+				time.sleep(0.01)
 
 		except Exception as e:
 			print(e)

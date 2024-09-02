@@ -28,7 +28,7 @@ import os
 
 # Set the default PATH
 
-main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/urRobot/DATA/model_out/'
+main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/urRobot/DATA/UR10/model_out/'
 robot_dof = 6
 num_features = 4*robot_dof
 time_seq = 28

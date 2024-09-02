@@ -45,7 +45,7 @@ import datetime
 import os
 
 # Set the default PATH
-PATH = 'frankaRobot/DATA/'
+PATH = 'frankaRobot/DATA/target_robot/k_1/'
 
 # Prompt the user to enter a tag name for data labeling
 folder_name = input('Enter tag name: ')
