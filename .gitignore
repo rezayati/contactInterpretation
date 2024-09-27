@@ -1,5 +1,4 @@
 /frankaRobot/DATA/
 /urRobot/DATA/
 /robotAPI
-/dataset/test_on_franka_robots
-/dataset/test_on_UR_robot
+/dataset/
