@@ -23,7 +23,7 @@ main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
 joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_06_10_2024_10:00:22.csv'
 data_path = main_path + '/urRobot/DATA/robot_data/'
 
-contact_detection_path = main_path + 'AIModels/trainedModels/contactDetection/trainedModel_01_24_2024_11:18:01.pth'
+contact_detection_path = main_path + 'AIModels/trainedModels/contactDetection/trainedModel_06_30_2023_10:16:53.pth'#trainedModel_01_24_2024_11:18:01.pth'
 collision_detection_path = main_path + 'AIModels/trainedModels/collisionDetection/trainedModel_01_24_2024_11:12:30.pth'
 localization_path = main_path + 'AIModels/trainedModels/localization/trainedModel_01_24_2024_11:15:06.pth'
 
@@ -32,6 +32,7 @@ dof = 6
 features_num = dof * 4
 
 k = [1.35, 1.361, 1.355, 0.957, 0.865, 0.893]
+k = np.array([0.1082, 0.1100, 0.1097, 0.0787, 0.0294, 0.0261])*13
 
 model_contact, labels_map_contact, num_features_lstm_0 = import_lstm_models(PATH=contact_detection_path)
 model_collision, labels_map_collision, num_features_lstm_1 = import_lstm_models(PATH=collision_detection_path)
@@ -69,11 +70,10 @@ def contact_detection(data_object: RTDEReceive, event: Event):
     # Start a thread to monitor RTDE connection
     #connection_thread = Thread(target=check_rtde_connection, args=(data_object, event))
     #connection_thread.start()
-    
-    rate = rospy.Rate(frequency)
-    while not rospy.is_shutdown() and not event.is_set():
-        start_time = rospy.get_time()
 
+    rate = rospy.Rate(frequency)
+    while not rospy.is_shutdown() and not event.is_set() and data_object.isConnected():
+        start_time = rospy.get_time()
         try:
             q_desired = np.array(data_object.getTargetQ())
             q = np.array(data_object.getActualQ())
@@ -111,12 +111,11 @@ def contact_detection(data_object: RTDEReceive, event: Event):
             lstmDataWindow = np.vstack(lstmDataWindow)
 
             with torch.no_grad():
-                data_input = transform(lstmDataWindow).to(device).float()
+                data_input = torch.Tensor(np.array([lstmDataWindow])).to(device).float()#transform(lstmDataWindow).to(device).float()
                 model_out = model_contact(data_input)
-                model_out = model_out.detach()
-                output = torch.argmax(model_out, dim=1)
+                output =  model_out.argmax().item()
 
-            contact = output.cpu().numpy()[0]
+            contact = output
             if contact == 1:
                 '''with torch.no_grad():
                     model_out = model_collision(data_input)
@@ -146,11 +145,10 @@ def contact_detection(data_object: RTDEReceive, event: Event):
             rospy.logerr(f"Error in contact_detection: {e}")
         
         rate.sleep()
-
+    event.set()
 def signal_handler(sig, frame):
     print('Stopping the robot...')
-    global running
-    running = False
+    event.set()
 
 if __name__ == "__main__":
     global model_pub, big_time_digits, running,connection_thread
@@ -158,6 +156,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
     event = Event()
     event.clear()
+    
     rospy.init_node('ur_robot_data')
     model_pub = rospy.Publisher("/model_output", numpy_msg(Floats), queue_size=1)
     scale = 1000000
@@ -171,10 +170,11 @@ if __name__ == "__main__":
 
     running = True
     i = 0
-    file_name = input('ENTER DATA TAG NAME: ')
+    '''file_name = input('ENTER DATA TAG NAME: ')
     file_name = data_path + file_name
     os.makedirs(file_name, exist_ok=True)
     file_name = file_name + '/' + str(rospy.Time.now().to_sec()) + '.txt'
+    data_object.startFileRecording(file_name)'''
 
     detection_thread = Thread(target=contact_detection, args=(data_object, event,))
     print('Waiting for the models to be loaded...')
@@ -185,9 +185,9 @@ if __name__ == "__main__":
         joints = pd.read_csv(joints_data_path)
         print(joints.head())
 
-        data_object.startFileRecording(file_name)
+        #data_object.startFileRecording(file_name)
 
-        while running and not rospy.is_shutdown() and robot.isConnected():
+        while running and not rospy.is_shutdown() and robot.isConnected() and not event.is_set():
             robot.moveL(np.array(joints.iloc[i]), speed=0.25, acceleration=0.2)
             if i < joints.shape[0] - 1:
                 i = i + 1
@@ -202,9 +202,9 @@ if __name__ == "__main__":
     finally:
         print('Cleaning up resources...')
         robot.stopScript()
+        data_object.stopFileRecording()
         event.set()
         detection_thread.join(timeout=1)
-        data_object.stopFileRecording()
         print('Program stopped.')
 
     #connection_thread.join(timeout=1)  # Ensure connection thread is terminated cleanly
