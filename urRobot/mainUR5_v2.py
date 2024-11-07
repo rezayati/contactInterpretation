@@ -21,7 +21,8 @@ frequency = 200
 
 main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/'
 joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_06_10_2024_10:00:22.csv'
-data_path = main_path + '/urRobot/DATA/robot_data/'
+joints_data_path = main_path + 'urRobot/robotMotionPoints/UR5_06_18_2024_17:37:39.csv'
+data_path = main_path + '/dataset/ur5/raw_data/'#'/urRobot/DATA/robot_data/'
 
 contact_detection_path = main_path + 'AIModels/trainedModels/contactDetection/trainedModel_01_24_2024_11:18:01.pth'
 collision_detection_path = main_path + 'AIModels/trainedModels/collisionDetection/trainedModel_01_24_2024_11:12:30.pth'
@@ -32,6 +33,7 @@ dof = 6
 features_num = dof * 4
 
 k = [1.35, 1.361, 1.355, 0.957, 0.865, 0.893]
+k = np.array([0.1082, 0.1100, 0.1097, 0.0787, 0.0294, 0.0261])*10 #ur robot support file
 
 model_contact, labels_map_contact, num_features_lstm_0 = import_lstm_models(PATH=contact_detection_path)
 model_collision, labels_map_collision, num_features_lstm_1 = import_lstm_models(PATH=collision_detection_path)
@@ -109,9 +111,10 @@ def contact_detection(data_object: RTDEReceive, event: Event):
                 lstmDataWindow.append(join_data_matrix.reshape((1, num_features_lstm * window_length)))
 
             lstmDataWindow = np.vstack(lstmDataWindow)
+            data_input = torch.tensor([lstmDataWindow]).to(device).float()
 
             with torch.no_grad():
-                data_input = transform(lstmDataWindow).to(device).float()
+                #data_input = transform(lstmDataWindow).to(device).float()
                 model_out = model_contact(data_input)
                 model_out = model_out.detach()
                 output = torch.argmax(model_out, dim=1)
@@ -175,6 +178,7 @@ if __name__ == "__main__":
     file_name = data_path + file_name
     os.makedirs(file_name, exist_ok=True)
     file_name = file_name + '/' + str(rospy.Time.now().to_sec()) + '.txt'
+    data_object.startFileRecording(file_name)
 
     detection_thread = Thread(target=contact_detection, args=(data_object, event,))
     print('Waiting for the models to be loaded...')
@@ -185,7 +189,7 @@ if __name__ == "__main__":
         joints = pd.read_csv(joints_data_path)
         print(joints.head())
 
-        data_object.startFileRecording(file_name)
+        
 
         while running and not rospy.is_shutdown() and robot.isConnected():
             robot.moveL(np.array(joints.iloc[i]), speed=0.25, acceleration=0.2)

@@ -74,7 +74,7 @@ dof = 7
 k=0.25 #panda_dummy
 k = 1
 # Define paths for joint motion data
-joints_data_path = main_path + 'frankaRobot/robotMotionPoints/robotMotionJointData.csv'
+joints_data_path = main_path + 'frankaRobot/robotMotionPoints/robotMotionJointData_11_07_2024_19:11:37.csv'
 
 # load model
 model_contact, labels_map_contact = import_lstm_models(PATH=contact_detection_path, num_features_lstm=num_features_lstm)
@@ -129,9 +129,10 @@ def contact_detection(data):
 		lstmDataWindow.append(join_data_matix.reshape((1, num_features_lstm*window_length)))
 
 	lstmDataWindow = np.vstack(lstmDataWindow)
+	data_input = torch.tensor([lstmDataWindow]).to(device).float()
 
 	with torch.no_grad():
-		data_input = transform(lstmDataWindow).to(device).float()
+		#data_input = transform(lstmDataWindow).to(device).float()
 		model_out = model_contact(data_input)
 		model_out = model_out.detach()
 		output = torch.argmax(model_out, dim=1)
@@ -182,8 +183,8 @@ def move_robot(fa:FrankaArm, event: Event):
 	while True:	
 		try:	
 			for i in range(joints.shape[0]):
-				#fa.goto_joints(np.array(joints.iloc[i]),ignore_virtual_walls=True,duration=4)
-				time.sleep(0.01)
+				fa.goto_joints(np.array(joints.iloc[i]),ignore_virtual_walls=True,duration=4)
+				#time.sleep(0.01)
 
 		except Exception as e:
 			print(e)

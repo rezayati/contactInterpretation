@@ -46,6 +46,7 @@ import os
 
 # Set the default PATH
 PATH = 'frankaRobot/DATA/target_robot/k_1/'
+PATH = 'dataset/franka_mindlab/raw_data/'
 
 # Prompt the user to enter a tag name for data labeling
 folder_name = input('Enter tag name: ')
