@@ -296,3 +296,4 @@
 2024-12-14 04:27:13,792 - INFO - Accuracy on the test data = [56.35491609573364]
 2024-12-14 04:27:14,432 - INFO - ------------  model_cnnLSTM , num_layers = 3, hidden_size=256 seq_num = 100, gap = 5, --------------
 2024-12-14 04:29:55,171 - INFO - Accuracy on the test data = [74.50039982795715]
+
