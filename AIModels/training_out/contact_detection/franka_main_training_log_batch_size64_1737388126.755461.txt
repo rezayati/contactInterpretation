@@ -1,0 +1,45 @@
+
+2025-01-20 19:10:27,195 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=64 seq_num = 50, gap = 3, --------------
+2025-01-20 19:14:04,628 - INFO - Accuracy:84.20, DetectionFailurRate:20.34, FalseAlarm:10.02, Contact Detection Delay: 53.563ms, No-Contact Detection Delay: 91.888ms, TP: 466, TN: 413, FP: 46, FN: 119
+2025-01-20 19:14:05,255 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=64 seq_num = 50, gap = 5, --------------
+2025-01-20 19:16:21,765 - INFO - Accuracy:88.30, DetectionFailurRate:6.22, FalseAlarm:18.46, Contact Detection Delay: 46.419ms, No-Contact Detection Delay: 83.764ms, TP: 558, TN: 393, FP: 89, FN: 37
+2025-01-20 19:16:22,592 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=64 seq_num = 80, gap = 3, --------------
+2025-01-20 19:20:01,653 - INFO - Accuracy:95.06, DetectionFailurRate:8.27, FalseAlarm:1.36, Contact Detection Delay: 57.488ms, No-Contact Detection Delay: 77.499ms, TP: 510, TN: 509, FP: 7, FN: 46
+2025-01-20 19:20:02,349 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=64 seq_num = 80, gap = 5, --------------
+2025-01-20 19:22:14,774 - INFO - Accuracy:90.18, DetectionFailurRate:8.15, FalseAlarm:11.62, Contact Detection Delay: 48.742ms, No-Contact Detection Delay: 47.511ms, TP: 541, TN: 487, FP: 64, FN: 48
+2025-01-20 19:22:15,667 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=64 seq_num = 100, gap = 3, --------------
+2025-01-20 19:25:54,648 - INFO - Accuracy:90.48, DetectionFailurRate:4.87, FalseAlarm:14.84, Contact Detection Delay: 40.986ms, No-Contact Detection Delay: 48.781ms, TP: 566, TN: 442, FP: 77, FN: 29
+2025-01-20 19:25:55,378 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=64 seq_num = 100, gap = 5, --------------
+2025-01-20 19:28:08,815 - INFO - Accuracy:96.55, DetectionFailurRate:4.14, FalseAlarm:2.84, Contact Detection Delay: 64.264ms, No-Contact Detection Delay: 22.499ms, TP: 510, TN: 581, FP: 17, FN: 22
+2025-01-20 19:28:09,540 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=128 seq_num = 50, gap = 3, --------------
+2025-01-20 19:31:37,150 - INFO - Accuracy:94.35, DetectionFailurRate:3.02, FalseAlarm:10.47, Contact Detection Delay: 51.639ms, No-Contact Detection Delay: 98.576ms, TP: 610, TN: 308, FP: 36, FN: 19
+2025-01-20 19:31:37,770 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=128 seq_num = 50, gap = 5, --------------
+2025-01-20 19:33:42,501 - INFO - Accuracy:85.87, DetectionFailurRate:20.15, FalseAlarm:8.54, Contact Detection Delay: 56.240ms, No-Contact Detection Delay: 68.742ms, TP: 416, TN: 514, FP: 48, FN: 105
+2025-01-20 19:33:43,313 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=128 seq_num = 80, gap = 3, --------------
+2025-01-20 19:37:12,706 - INFO - Accuracy:98.42, DetectionFailurRate:1.54, FalseAlarm:1.63, Contact Detection Delay: 54.992ms, No-Contact Detection Delay: 35.005ms, TP: 574, TN: 544, FP: 9, FN: 9
+2025-01-20 19:37:13,401 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=128 seq_num = 80, gap = 5, --------------
+2025-01-20 19:39:19,018 - INFO - Accuracy:90.81, DetectionFailurRate:9.58, FalseAlarm:8.83, Contact Detection Delay: 60.822ms, No-Contact Detection Delay: 34.995ms, TP: 491, TN: 537, FP: 52, FN: 52
+2025-01-20 19:39:19,886 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=128 seq_num = 100, gap = 3, --------------
+2025-01-20 19:42:51,709 - INFO - Accuracy:96.87, DetectionFailurRate:2.90, FalseAlarm:3.37, Contact Detection Delay: 69.983ms, No-Contact Detection Delay: 50.646ms, TP: 536, TN: 516, FP: 18, FN: 16
+2025-01-20 19:42:52,519 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=128 seq_num = 100, gap = 5, --------------
+2025-01-20 23:08:32,402 - INFO - Testing: 64, 3, 50, Accuracy:90.27, DetectionFailurRate:15.72, FalseAlarm:10.04, Contact Detection Delay: 39.05ms, No-Contact Detection Delay: 73.84ms, TP: 3788, TN: 3288, FP: 472, FN: 291
+2025-01-20 23:08:43,385 - INFO - Testing: 64, 3, 80, Accuracy:96.31, DetectionFailurRate:6.92, FalseAlarm:1.36, Contact Detection Delay: 42.49ms, No-Contact Detection Delay: 61.68ms, TP: 3748, TN: 3874, FP: 137, FN: 155
+2025-01-20 23:08:54,223 - INFO - Testing: 64, 3, 100, Accuracy:92.07, DetectionFailurRate:4.50, FalseAlarm:14.84, Contact Detection Delay: 42.08ms, No-Contact Detection Delay: 60.51ms, TP: 3890, TN: 3355, FP: 546, FN: 78
+2025-01-20 23:09:05,231 - INFO - Testing: 128, 3, 50, Accuracy:86.95, DetectionFailurRate:2.82, FalseAlarm:10.50, Contact Detection Delay: nanms, No-Contact Detection Delay: 76.27ms, TP: 4152, TN: 2418, FP: 923, FN: 63
+2025-01-20 23:09:16,160 - INFO - Testing: 128, 3, 80, Accuracy:97.37, DetectionFailurRate:1.37, FalseAlarm:1.63, Contact Detection Delay: 36.25ms, No-Contact Detection Delay: 62.16ms, TP: 3937, TN: 3836, FP: 128, FN: 82
+2025-01-20 23:09:27,232 - INFO - Testing: 128, 3, 100, Accuracy:96.86, DetectionFailurRate:2.68, FalseAlarm:3.38, Contact Detection Delay: nanms, No-Contact Detection Delay: 54.11ms, TP: 3910, TN: 3794, FP: 189, FN: 61
+2025-01-20 23:09:38,096 - INFO - Testing: 64, 5, 50, Accuracy:91.02, DetectionFailurRate:5.58, FalseAlarm:18.50, Contact Detection Delay: 34.08ms, No-Contact Detection Delay: 102.94ms, TP: 4036, TN: 2776, FP: 567, FN: 105
+2025-01-20 23:09:49,013 - INFO - Testing: 64, 5, 80, Accuracy:95.56, DetectionFailurRate:7.24, FalseAlarm:11.64, Contact Detection Delay: 40.90ms, No-Contact Detection Delay: 58.48ms, TP: 3860, TN: 3732, FP: 231, FN: 122
+2025-01-20 23:09:59,851 - INFO - Testing: 64, 5, 100, Accuracy:95.80, DetectionFailurRate:3.57, FalseAlarm:2.85, Contact Detection Delay: 46.91ms, No-Contact Detection Delay: 55.87ms, TP: 3768, TN: 3782, FP: 224, FN: 107
+2025-01-20 23:10:10,717 - INFO - Testing: 128, 5, 50, Accuracy:93.02, DetectionFailurRate:17.21, FalseAlarm:8.56, Contact Detection Delay: 43.47ms, No-Contact Detection Delay: 114.89ms, TP: 3730, TN: 3077, FP: 317, FN: 194
+2025-01-20 23:10:21,790 - INFO - Testing: 128, 5, 80, Accuracy:91.80, DetectionFailurRate:8.50, FalseAlarm:8.84, Contact Detection Delay: 45.97ms, No-Contact Detection Delay: 56.98ms, TP: 3842, TN: 3421, FP: 528, FN: 121
+2025-01-20 23:10:32,700 - INFO - Testing: 128, 5, 100, Accuracy:94.41, DetectionFailurRate:0.67, FalseAlarm:2.54, Contact Detection Delay: 45.26ms, No-Contact Detection Delay: 52.94ms, TP: 3829, TN: 3648, FP: 379, FN: 64
+2025-01-20 23:31:50,300 - INFO - ------------  model_cnnLSTM , num_layers = 1, hidden_size=128 seq_num = 80, gap = 3, --------------
+2025-01-20 23:37:31,634 - INFO - testing best models on ur5
+2025-01-20 23:37:52,568 - INFO - Testing: 128, 3, 80, Accuracy:59.80, DetectionFailurRate:14.11, FalseAlarm:55.01, Contact Detection Delay: 81.68ms, No-Contact Detection Delay: 76.22ms, TP: 2791, TN: 5849, FP: 5064, FN: 743
+2025-01-20 23:38:13,271 - INFO - Testing: 128, 3, 100, Accuracy:62.48, DetectionFailurRate:15.50, FalseAlarm:41.92, Contact Detection Delay: 68.86ms, No-Contact Detection Delay: nanms, TP: 2869, TN: 6184, FP: 4718, FN: 718
+2025-01-20 23:38:33,765 - INFO - Testing: 64, 3, 100, Accuracy:55.20, DetectionFailurRate:5.24, FalseAlarm:53.26, Contact Detection Delay: 81.83ms, No-Contact Detection Delay: nanms, TP: 2886, TN: 4938, FP: 5722, FN: 629
+2025-01-20 23:39:07,664 - INFO - testing best models on franka_mindlab
+2025-01-20 23:39:24,725 - INFO - Testing: 128, 3, 80, Accuracy:75.05, DetectionFailurRate:25.60, FalseAlarm:40.66, Contact Detection Delay: 74.81ms, No-Contact Detection Delay: 90.70ms, TP: 4706, TN: 4166, FP: 2283, FN: 667
+2025-01-20 23:39:41,526 - INFO - Testing: 128, 3, 100, Accuracy:74.99, DetectionFailurRate:12.39, FalseAlarm:55.04, Contact Detection Delay: 82.39ms, No-Contact Detection Delay: 72.06ms, TP: 4911, TN: 3811, FP: 2461, FN: 448
+2025-01-20 23:39:58,480 - INFO - Testing: 64, 3, 100, Accuracy:76.51, DetectionFailurRate:24.19, FalseAlarm:54.81, Contact Detection Delay: 55.88ms, No-Contact Detection Delay: 86.25ms, TP: 4841, TN: 4211, FP: 2269, FN: 510
