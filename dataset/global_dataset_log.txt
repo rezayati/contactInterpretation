@@ -1,0 +1,335 @@
+2024-12-18 02:27:24,964 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-18 02:27:24,966 - INFO - Total samples across all trials: 22243
+2024-12-18 02:27:24,966 - INFO - Total samples used for training (23.004990334037675% of data): 5117
+2024-12-18 02:27:25,111 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:27:25,113 - INFO - Counts: tensor([1494,  726,  727,  561,  498,  496,  615])
+2024-12-18 02:27:32,554 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-18 02:27:32,555 - INFO - Total samples across all trials: 13349
+2024-12-18 02:27:32,556 - INFO - Total samples used for training (22.96052138736984% of data): 3065
+2024-12-18 02:27:32,623 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:27:32,624 - INFO - Counts: tensor([896, 438, 436, 338, 297, 295, 365])
+2024-12-18 02:27:36,374 - INFO - ------------------ur5_feature_e_gap_10_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-18 02:27:36,375 - INFO - Total samples across all trials: 6676
+2024-12-18 02:27:36,376 - INFO - Total samples used for training (22.97783103654883% of data): 1534
+2024-12-18 02:27:36,411 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:27:36,412 - INFO - Counts: tensor([446, 219, 218, 171, 150, 147, 183])
+2024-12-18 02:27:39,177 - INFO - ------------------ur5_feature_e_gap_15_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-18 02:27:39,178 - INFO - Total samples across all trials: 4454
+2024-12-18 02:27:39,178 - INFO - Total samples used for training (22.833408172429277% of data): 1017
+2024-12-18 02:27:39,201 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:27:39,202 - INFO - Counts: tensor([294, 146, 147, 111,  99,  99, 121])
+2024-12-18 02:27:49,682 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-18 02:27:49,683 - INFO - Total samples across all trials: 22164
+2024-12-18 02:27:49,684 - INFO - Total samples used for training (23.0869879083198% of data): 5117
+2024-12-18 02:27:49,840 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:27:49,841 - INFO - Counts: tensor([1484,  728,  727,  565,  499,  499,  615])
+2024-12-18 02:27:56,510 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-18 02:27:56,511 - INFO - Total samples across all trials: 13301
+2024-12-18 02:27:56,512 - INFO - Total samples used for training (23.005789038418165% of data): 3060
+2024-12-18 02:27:56,583 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:27:56,584 - INFO - Counts: tensor([888, 438, 437, 338, 298, 295, 366])
+2024-12-18 02:28:00,348 - INFO - ------------------ur5_feature_e_gap_10_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-18 02:28:00,350 - INFO - Total samples across all trials: 6652
+2024-12-18 02:28:00,350 - INFO - Total samples used for training (23.000601322910402% of data): 1530
+2024-12-18 02:28:00,387 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:00,388 - INFO - Counts: tensor([441, 219, 218, 171, 150, 147, 184])
+2024-12-18 02:28:03,153 - INFO - ------------------ur5_feature_e_gap_15_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-18 02:28:03,154 - INFO - Total samples across all trials: 4437
+2024-12-18 02:28:03,155 - INFO - Total samples used for training (22.875816993464053% of data): 1015
+2024-12-18 02:28:03,179 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:03,180 - INFO - Counts: tensor([294, 145, 144, 113,  99,  99, 121])
+2024-12-18 02:28:13,669 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-18 02:28:13,670 - INFO - Total samples across all trials: 22044
+2024-12-18 02:28:13,670 - INFO - Total samples used for training (23.180910905461804% of data): 5110
+2024-12-18 02:28:13,829 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:13,830 - INFO - Counts: tensor([1470,  728,  727,  567,  501,  499,  618])
+2024-12-18 02:28:20,507 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-18 02:28:20,508 - INFO - Total samples across all trials: 13229
+2024-12-18 02:28:20,509 - INFO - Total samples used for training (23.108322624537003% of data): 3057
+2024-12-18 02:28:20,581 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:20,582 - INFO - Counts: tensor([881, 438, 437, 339, 300, 295, 367])
+2024-12-18 02:28:24,295 - INFO - ------------------ur5_feature_e_gap_10_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-18 02:28:24,296 - INFO - Total samples across all trials: 6616
+2024-12-18 02:28:24,296 - INFO - Total samples used for training (23.080411124546554% of data): 1527
+2024-12-18 02:28:24,334 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:24,335 - INFO - Counts: tensor([437, 219, 218, 171, 151, 147, 184])
+2024-12-18 02:28:27,094 - INFO - ------------------ur5_feature_e_gap_15_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-18 02:28:27,094 - INFO - Total samples across all trials: 4413
+2024-12-18 02:28:27,095 - INFO - Total samples used for training (23.000226603217765% of data): 1015
+2024-12-18 02:28:27,122 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:27,122 - INFO - Counts: tensor([292, 145, 144, 114, 100,  99, 121])
+2024-12-18 02:28:37,545 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-18 02:28:37,546 - INFO - Total samples across all trials: 21962
+2024-12-18 02:28:37,546 - INFO - Total samples used for training (23.221928786085055% of data): 5100
+2024-12-18 02:28:37,707 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:37,708 - INFO - Counts: tensor([1462,  726,  731,  565,  503,  494,  619])
+2024-12-18 02:28:44,364 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-18 02:28:44,365 - INFO - Total samples across all trials: 13181
+2024-12-18 02:28:44,366 - INFO - Total samples used for training (23.20006069342235% of data): 3058
+2024-12-18 02:28:44,440 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:44,441 - INFO - Counts: tensor([877, 438, 438, 340, 302, 295, 368])
+2024-12-18 02:28:48,187 - INFO - ------------------ur5_feature_e_gap_10_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-18 02:28:48,188 - INFO - Total samples across all trials: 6592
+2024-12-18 02:28:48,189 - INFO - Total samples used for training (23.164441747572813% of data): 1527
+2024-12-18 02:28:48,228 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:48,229 - INFO - Counts: tensor([434, 219, 219, 172, 152, 147, 184])
+2024-12-18 02:28:50,913 - INFO - ------------------ur5_feature_e_gap_15_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-18 02:28:50,914 - INFO - Total samples across all trials: 4398
+2024-12-18 02:28:50,914 - INFO - Total samples used for training (22.9649840836744% of data): 1010
+2024-12-18 02:28:50,940 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:28:50,940 - INFO - Counts: tensor([288, 145, 144, 113, 100,  96, 124])
+2024-12-18 02:29:01,222 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_150.pickle------------------
+2024-12-18 02:29:01,223 - INFO - Total samples across all trials: 21763
+2024-12-18 02:29:01,223 - INFO - Total samples used for training (23.448054036667738% of data): 5103
+2024-12-18 02:29:01,389 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:29:01,390 - INFO - Counts: tensor([1436,  726,  736,  570,  514,  500,  621])
+2024-12-18 02:29:07,948 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_150.pickle------------------
+2024-12-18 02:29:07,948 - INFO - Total samples across all trials: 13061
+2024-12-18 02:29:07,949 - INFO - Total samples used for training (23.374933006661053% of data): 3053
+2024-12-18 02:29:08,027 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:29:08,027 - INFO - Counts: tensor([862, 438, 440, 342, 306, 297, 368])
+2024-12-18 02:29:11,776 - INFO - ------------------ur5_feature_e_gap_10_splitRate_0.75_seqNum_150.pickle------------------
+2024-12-18 02:29:11,777 - INFO - Total samples across all trials: 6532
+2024-12-18 02:29:11,777 - INFO - Total samples used for training (23.346601347213717% of data): 1525
+2024-12-18 02:29:11,819 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:29:11,820 - INFO - Counts: tensor([427, 219, 219, 174, 154, 148, 184])
+2024-12-18 02:29:14,554 - INFO - ------------------ur5_feature_e_gap_15_splitRate_0.75_seqNum_150.pickle------------------
+2024-12-18 02:29:14,555 - INFO - Total samples across all trials: 4358
+2024-12-18 02:29:14,556 - INFO - Total samples used for training (23.359339146397428% of data): 1018
+2024-12-18 02:29:14,582 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:29:14,583 - INFO - Counts: tensor([284, 146, 149, 113, 104, 100, 122])
+2024-12-18 02:29:24,749 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_200.pickle------------------
+2024-12-18 02:29:24,749 - INFO - Total samples across all trials: 21564
+2024-12-18 02:29:24,750 - INFO - Total samples used for training (23.655166017436468% of data): 5101
+2024-12-18 02:29:24,922 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:29:24,923 - INFO - Counts: tensor([1411,  733,  737,  578,  516,  507,  619])
+2024-12-18 02:29:31,494 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_200.pickle------------------
+2024-12-18 02:29:31,495 - INFO - Total samples across all trials: 12941
+2024-12-18 02:29:31,496 - INFO - Total samples used for training (23.58395796306313% of data): 3052
+2024-12-18 02:29:31,579 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:29:31,579 - INFO - Counts: tensor([847, 441, 443, 345, 309, 299, 368])
+2024-12-18 02:29:35,196 - INFO - ------------------ur5_feature_e_gap_10_splitRate_0.75_seqNum_200.pickle------------------
+2024-12-18 02:29:35,198 - INFO - Total samples across all trials: 6472
+2024-12-18 02:29:35,198 - INFO - Total samples used for training (23.563040791100125% of data): 1525
+2024-12-18 02:29:35,239 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:29:35,240 - INFO - Counts: tensor([421, 221, 221, 174, 155, 149, 184])
+2024-12-18 02:29:37,862 - INFO - ------------------ur5_feature_e_gap_15_splitRate_0.75_seqNum_200.pickle------------------
+2024-12-18 02:29:37,863 - INFO - Total samples across all trials: 4317
+2024-12-18 02:29:37,863 - INFO - Total samples used for training (23.44220523511698% of data): 1012
+2024-12-18 02:29:37,891 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-18 02:29:37,891 - INFO - Counts: tensor([280, 147, 147, 115, 102, 100, 121])
+2024-12-19 09:04:01,061 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-19 09:04:01,062 - INFO - Total samples across all trials: 19052
+2024-12-19 09:04:01,062 - INFO - Total samples used for training (25.0944782699979% of data): 4781
+2024-12-19 09:04:01,221 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:01,222 - INFO - Counts: tensor([1178,  607,  518,  570,  540,  456,  517,  395])
+2024-12-19 09:04:06,789 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-19 09:04:06,790 - INFO - Total samples across all trials: 11433
+2024-12-19 09:04:06,791 - INFO - Total samples used for training (25.05029301145806% of data): 2864
+2024-12-19 09:04:06,858 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:06,859 - INFO - Counts: tensor([706, 364, 308, 342, 325, 273, 310, 236])
+2024-12-19 09:04:09,873 - INFO - ------------------franka_mindlab_feature_e_gap_10_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-19 09:04:09,874 - INFO - Total samples across all trials: 5720
+2024-12-19 09:04:09,874 - INFO - Total samples used for training (24.895104895104893% of data): 1424
+2024-12-19 09:04:09,908 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:09,909 - INFO - Counts: tensor([350, 181, 154, 168, 161, 135, 155, 120])
+2024-12-19 09:04:12,041 - INFO - ------------------franka_mindlab_feature_e_gap_15_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-19 09:04:12,042 - INFO - Total samples across all trials: 3816
+2024-12-19 09:04:12,043 - INFO - Total samples used for training (24.81656184486373% of data): 947
+2024-12-19 09:04:12,065 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:12,066 - INFO - Counts: tensor([232, 120, 102, 116, 106,  90, 102,  79])
+2024-12-19 09:04:21,097 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-19 09:04:21,098 - INFO - Total samples across all trials: 18957
+2024-12-19 09:04:21,098 - INFO - Total samples used for training (25.29408661708076% of data): 4795
+2024-12-19 09:04:21,203 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:21,204 - INFO - Counts: tensor([1164,  613,  520,  575,  546,  458,  520,  399])
+2024-12-19 09:04:27,795 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-19 09:04:27,796 - INFO - Total samples across all trials: 11377
+2024-12-19 09:04:27,796 - INFO - Total samples used for training (25.226333831414255% of data): 2870
+2024-12-19 09:04:27,866 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:27,867 - INFO - Counts: tensor([696, 365, 310, 345, 327, 275, 314, 238])
+2024-12-19 09:04:30,855 - INFO - ------------------franka_mindlab_feature_e_gap_10_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-19 09:04:30,856 - INFO - Total samples across all trials: 5692
+2024-12-19 09:04:30,856 - INFO - Total samples used for training (25.10541110330288% of data): 1429
+2024-12-19 09:04:30,892 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:30,893 - INFO - Counts: tensor([346, 183, 155, 169, 162, 137, 157, 120])
+2024-12-19 09:04:33,020 - INFO - ------------------franka_mindlab_feature_e_gap_15_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-19 09:04:33,021 - INFO - Total samples across all trials: 3797
+2024-12-19 09:04:33,021 - INFO - Total samples used for training (24.94074269159863% of data): 947
+2024-12-19 09:04:33,044 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:33,045 - INFO - Counts: tensor([227, 122, 103, 112, 108,  92, 102,  81])
+2024-12-19 09:04:41,867 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-19 09:04:41,868 - INFO - Total samples across all trials: 18817
+2024-12-19 09:04:41,869 - INFO - Total samples used for training (25.5141627251953% of data): 4801
+2024-12-19 09:04:42,031 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:42,032 - INFO - Counts: tensor([1141,  617,  524,  578,  550,  462,  525,  404])
+2024-12-19 09:04:47,503 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-19 09:04:47,504 - INFO - Total samples across all trials: 11293
+2024-12-19 09:04:47,504 - INFO - Total samples used for training (25.449393429558132% of data): 2874
+2024-12-19 09:04:47,576 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:47,577 - INFO - Counts: tensor([682, 368, 312, 348, 329, 279, 316, 240])
+2024-12-19 09:04:50,520 - INFO - ------------------franka_mindlab_feature_e_gap_10_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-19 09:04:50,521 - INFO - Total samples across all trials: 5650
+2024-12-19 09:04:50,521 - INFO - Total samples used for training (25.327433628318584% of data): 1431
+2024-12-19 09:04:50,557 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:50,558 - INFO - Counts: tensor([338, 185, 156, 170, 164, 138, 158, 122])
+2024-12-19 09:04:52,642 - INFO - ------------------franka_mindlab_feature_e_gap_15_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-19 09:04:52,642 - INFO - Total samples across all trials: 3769
+2024-12-19 09:04:52,643 - INFO - Total samples used for training (25.285221544176174% of data): 953
+2024-12-19 09:04:52,666 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:04:52,667 - INFO - Counts: tensor([226, 123, 104, 112, 108,  94, 103,  83])
+2024-12-19 09:05:01,359 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-19 09:05:01,360 - INFO - Total samples across all trials: 18724
+2024-12-19 09:05:01,361 - INFO - Total samples used for training (25.667592394787437% of data): 4806
+2024-12-19 09:05:01,518 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:01,519 - INFO - Counts: tensor([1130,  620,  523,  584,  553,  464,  526,  406])
+2024-12-19 09:05:06,954 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-19 09:05:06,955 - INFO - Total samples across all trials: 11237
+2024-12-19 09:05:06,956 - INFO - Total samples used for training (25.665213135178426% of data): 2884
+2024-12-19 09:05:07,029 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:07,030 - INFO - Counts: tensor([677, 370, 316, 348, 333, 280, 318, 242])
+2024-12-19 09:05:09,981 - INFO - ------------------franka_mindlab_feature_e_gap_10_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-19 09:05:09,982 - INFO - Total samples across all trials: 5622
+2024-12-19 09:05:09,982 - INFO - Total samples used for training (25.48914976876556% of data): 1433
+2024-12-19 09:05:10,021 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:10,022 - INFO - Counts: tensor([335, 186, 157, 171, 164, 138, 160, 122])
+2024-12-19 09:05:12,124 - INFO - ------------------franka_mindlab_feature_e_gap_15_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-19 09:05:12,125 - INFO - Total samples across all trials: 3750
+2024-12-19 09:05:12,125 - INFO - Total samples used for training (25.493333333333336% of data): 956
+2024-12-19 09:05:12,150 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:12,151 - INFO - Counts: tensor([220, 123, 105, 116, 113,  93, 108,  78])
+2024-12-19 09:05:20,765 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_150.pickle------------------
+2024-12-19 09:05:20,766 - INFO - Total samples across all trials: 18492
+2024-12-19 09:05:20,766 - INFO - Total samples used for training (26.08695652173913% of data): 4824
+2024-12-19 09:05:20,936 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:20,937 - INFO - Counts: tensor([1095,  624,  537,  582,  561,  476,  534,  415])
+2024-12-19 09:05:26,348 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_150.pickle------------------
+2024-12-19 09:05:26,349 - INFO - Total samples across all trials: 11097
+2024-12-19 09:05:26,349 - INFO - Total samples used for training (26.06109759394431% of data): 2892
+2024-12-19 09:05:26,428 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:26,429 - INFO - Counts: tensor([655, 375, 320, 351, 337, 285, 321, 248])
+2024-12-19 09:05:29,350 - INFO - ------------------franka_mindlab_feature_e_gap_10_splitRate_0.75_seqNum_150.pickle------------------
+2024-12-19 09:05:29,350 - INFO - Total samples across all trials: 5552
+2024-12-19 09:05:29,351 - INFO - Total samples used for training (25.864553314121036% of data): 1436
+2024-12-19 09:05:29,392 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:29,393 - INFO - Counts: tensor([325, 186, 160, 171, 167, 141, 160, 126])
+2024-12-19 09:05:31,584 - INFO - ------------------franka_mindlab_feature_e_gap_15_splitRate_0.75_seqNum_150.pickle------------------
+2024-12-19 09:05:31,585 - INFO - Total samples across all trials: 3704
+2024-12-19 09:05:31,585 - INFO - Total samples used for training (25.755939524838013% of data): 954
+2024-12-19 09:05:31,620 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:31,621 - INFO - Counts: tensor([214, 124, 107, 118, 111,  93, 106,  81])
+2024-12-19 09:05:40,379 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_200.pickle------------------
+2024-12-19 09:05:40,380 - INFO - Total samples across all trials: 18257
+2024-12-19 09:05:40,380 - INFO - Total samples used for training (26.5103795804349% of data): 4840
+2024-12-19 09:05:40,542 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:40,542 - INFO - Counts: tensor([1062,  632,  545,  589,  568,  482,  538,  424])
+2024-12-19 09:05:46,127 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_200.pickle------------------
+2024-12-19 09:05:46,128 - INFO - Total samples across all trials: 10957
+2024-12-19 09:05:46,129 - INFO - Total samples used for training (26.457972072647625% of data): 2899
+2024-12-19 09:05:46,235 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:46,235 - INFO - Counts: tensor([637, 377, 324, 354, 340, 291, 324, 252])
+2024-12-19 09:05:49,238 - INFO - ------------------franka_mindlab_feature_e_gap_10_splitRate_0.75_seqNum_200.pickle------------------
+2024-12-19 09:05:49,239 - INFO - Total samples across all trials: 5482
+2024-12-19 09:05:49,239 - INFO - Total samples used for training (26.30426851514046% of data): 1442
+2024-12-19 09:05:49,294 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:49,295 - INFO - Counts: tensor([316, 188, 162, 173, 169, 144, 162, 128])
+2024-12-19 09:05:51,428 - INFO - ------------------franka_mindlab_feature_e_gap_15_splitRate_0.75_seqNum_200.pickle------------------
+2024-12-19 09:05:51,429 - INFO - Total samples across all trials: 3657
+2024-12-19 09:05:51,430 - INFO - Total samples used for training (26.14164615805305% of data): 956
+2024-12-19 09:05:51,465 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-19 09:05:51,465 - INFO - Counts: tensor([209, 126, 107, 115, 112,  96, 106,  85])
+2024-12-21 17:15:51,171 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-21 17:15:51,172 - INFO - Total samples across all trials: 19052
+2024-12-21 17:15:51,173 - INFO - Total samples used for training (32.537266428721395% of data): 6199
+2024-12-21 17:15:51,407 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:15:51,408 - INFO - Counts: tensor([893, 897, 855, 829, 767, 631, 752, 575])
+2024-12-21 17:15:57,148 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-21 17:15:57,149 - INFO - Total samples across all trials: 11433
+2024-12-21 17:15:57,150 - INFO - Total samples used for training (32.449925653809146% of data): 3710
+2024-12-21 17:15:57,268 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:15:57,269 - INFO - Counts: tensor([532, 537, 510, 499, 462, 377, 450, 343])
+2024-12-21 17:16:06,513 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-21 17:16:06,514 - INFO - Total samples across all trials: 18957
+2024-12-21 17:16:06,515 - INFO - Total samples used for training (32.67394629951997% of data): 6194
+2024-12-21 17:16:06,761 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:16:06,762 - INFO - Counts: tensor([883, 901, 854, 833, 768, 628, 748, 579])
+2024-12-21 17:17:01,055 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-21 17:17:01,057 - INFO - Total samples across all trials: 22243
+2024-12-21 17:17:01,057 - INFO - Total samples used for training (26.291417524614484% of data): 5848
+2024-12-21 17:17:01,248 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-21 17:17:01,248 - INFO - Counts: tensor([1198,  867,  880,  757,  686,  612,  848])
+2024-12-21 17:17:08,081 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-21 17:17:08,082 - INFO - Total samples across all trials: 13349
+2024-12-21 17:17:08,082 - INFO - Total samples used for training (26.219192448872576% of data): 3500
+2024-12-21 17:17:08,169 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-21 17:17:08,170 - INFO - Counts: tensor([715, 522, 528, 456, 411, 363, 505])
+2024-12-21 17:17:19,030 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-21 17:17:19,032 - INFO - Total samples across all trials: 22164
+2024-12-21 17:17:19,032 - INFO - Total samples used for training (26.371593575166933% of data): 5845
+2024-12-21 17:17:19,221 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-21 17:17:19,222 - INFO - Counts: tensor([1190,  869,  878,  760,  684,  615,  849])
+2024-12-21 17:17:26,041 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-21 17:17:26,042 - INFO - Total samples across all trials: 13301
+2024-12-21 17:17:26,043 - INFO - Total samples used for training (26.291256296519062% of data): 3497
+2024-12-21 17:17:26,131 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-21 17:17:26,132 - INFO - Counts: tensor([712, 522, 528, 456, 411, 363, 505])
+2024-12-21 17:17:36,918 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-21 17:17:36,919 - INFO - Total samples across all trials: 22044
+2024-12-21 17:17:36,919 - INFO - Total samples used for training (26.474324079114496% of data): 5836
+2024-12-21 17:17:37,112 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-21 17:17:37,113 - INFO - Counts: tensor([1181,  869,  878,  760,  684,  615,  849])
+2024-12-21 17:17:43,937 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-21 17:17:43,938 - INFO - Total samples across all trials: 13229
+2024-12-21 17:17:43,938 - INFO - Total samples used for training (26.411671328142717% of data): 3494
+2024-12-21 17:17:44,030 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-21 17:17:44,031 - INFO - Counts: tensor([709, 522, 528, 456, 411, 363, 505])
+2024-12-21 17:17:54,747 - INFO - ------------------ur5_feature_e_gap_3_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-21 17:17:54,748 - INFO - Total samples across all trials: 21962
+2024-12-21 17:17:54,749 - INFO - Total samples used for training (26.51397869046535% of data): 5823
+2024-12-21 17:17:54,944 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-21 17:17:54,945 - INFO - Counts: tensor([1176,  867,  881,  757,  684,  610,  848])
+2024-12-21 17:18:01,726 - INFO - ------------------ur5_feature_e_gap_5_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-21 17:18:01,728 - INFO - Total samples across all trials: 13181
+2024-12-21 17:18:01,728 - INFO - Total samples used for training (26.462332144753812% of data): 3488
+2024-12-21 17:18:01,820 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6])
+2024-12-21 17:18:01,821 - INFO - Counts: tensor([703, 522, 528, 456, 411, 363, 505])
+2024-12-21 17:18:10,808 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-21 17:18:10,810 - INFO - Total samples across all trials: 19052
+2024-12-21 17:18:10,810 - INFO - Total samples used for training (32.537266428721395% of data): 6199
+2024-12-21 17:18:11,003 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:18:11,004 - INFO - Counts: tensor([893, 897, 855, 829, 767, 631, 752, 575])
+2024-12-21 17:18:16,619 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_30.pickle------------------
+2024-12-21 17:18:16,620 - INFO - Total samples across all trials: 11433
+2024-12-21 17:18:16,620 - INFO - Total samples used for training (32.449925653809146% of data): 3710
+2024-12-21 17:18:16,713 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:18:16,714 - INFO - Counts: tensor([532, 537, 510, 499, 462, 377, 450, 343])
+2024-12-21 17:18:25,697 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-21 17:18:25,698 - INFO - Total samples across all trials: 18957
+2024-12-21 17:18:25,699 - INFO - Total samples used for training (32.67394629951997% of data): 6194
+2024-12-21 17:18:25,843 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:18:25,845 - INFO - Counts: tensor([883, 901, 854, 833, 768, 628, 748, 579])
+2024-12-21 17:18:31,446 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_50.pickle------------------
+2024-12-21 17:18:31,447 - INFO - Total samples across all trials: 11377
+2024-12-21 17:18:31,447 - INFO - Total samples used for training (32.574492396941196% of data): 3706
+2024-12-21 17:18:31,542 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:18:31,543 - INFO - Counts: tensor([528, 537, 510, 499, 462, 377, 450, 343])
+2024-12-21 17:18:40,469 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-21 17:18:40,470 - INFO - Total samples across all trials: 18817
+2024-12-21 17:18:40,470 - INFO - Total samples used for training (32.863899665196364% of data): 6184
+2024-12-21 17:18:40,620 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:18:40,621 - INFO - Counts: tensor([873, 901, 854, 833, 768, 628, 748, 579])
+2024-12-21 17:18:46,180 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_80.pickle------------------
+2024-12-21 17:18:46,181 - INFO - Total samples across all trials: 11293
+2024-12-21 17:18:46,181 - INFO - Total samples used for training (32.754803860798724% of data): 3699
+2024-12-21 17:18:46,332 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:18:46,332 - INFO - Counts: tensor([521, 537, 510, 499, 462, 377, 450, 343])
+2024-12-21 17:18:55,166 - INFO - ------------------franka_mindlab_feature_e_gap_3_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-21 17:18:55,167 - INFO - Total samples across all trials: 18724
+2024-12-21 17:18:55,167 - INFO - Total samples used for training (32.93099765007477% of data): 6166
+2024-12-21 17:18:55,321 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:18:55,322 - INFO - Counts: tensor([868, 898, 848, 835, 769, 626, 747, 575])
+2024-12-21 17:19:00,887 - INFO - ------------------franka_mindlab_feature_e_gap_5_splitRate_0.75_seqNum_100.pickle------------------
+2024-12-21 17:19:00,888 - INFO - Total samples across all trials: 11237
+2024-12-21 17:19:00,889 - INFO - Total samples used for training (32.89134110527721% of data): 3696
+2024-12-21 17:19:01,043 - INFO - Unique labels: tensor([0, 1, 2, 3, 4, 5, 6, 7])
+2024-12-21 17:19:01,044 - INFO - Counts: tensor([518, 537, 510, 499, 462, 377, 450, 343])
