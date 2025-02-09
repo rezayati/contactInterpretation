@@ -1,13 +1,3 @@
-2025-02-06 15:48:04,648 - INFO - trained on franka_main/trained_models/contact_detection/63, test on franka_main allowable delay: 30= 150ms
-2025-02-06 15:48:23,674 - INFO - Testing: 64, 3, 80, Accuracy:92.94, DetectionFailurRate:6.37, FalseAlarm:7.81, Contact Detection Delay: 64.54ms, No-Contact Detection Delay: 56.81ms, TP: 5293, TN: 4841, FP: 410, FN: 360
-2025-02-06 15:48:42,824 - INFO - Testing: 64, 3, 100, Accuracy:90.26, DetectionFailurRate:2.27, FalseAlarm:18.24, Contact Detection Delay: 48.14ms, No-Contact Detection Delay: 60.80ms, TP: 5776, TN: 4249, FP: 948, FN: 134
-2025-02-06 15:49:01,717 - INFO - Testing: 64, 5, 80, Accuracy:90.96, DetectionFailurRate:11.05, FalseAlarm:6.91, Contact Detection Delay: 65.54ms, No-Contact Detection Delay: 72.24ms, TP: 4918, TN: 4839, FP: 359, FN: 611
-2025-02-06 15:49:20,878 - INFO - Testing: 64, 5, 100, Accuracy:91.57, DetectionFailurRate:6.84, FalseAlarm:10.07, Contact Detection Delay: 56.40ms, No-Contact Detection Delay: 56.67ms, TP: 5219, TN: 4885, FP: 547, FN: 383
-2025-02-06 15:49:38,919 - INFO - Testing: 128, 3, 80, Accuracy:88.47, DetectionFailurRate:14.04, FalseAlarm:8.91, Contact Detection Delay: 62.35ms, No-Contact Detection Delay: 51.60ms, TP: 4799, TN: 4875, FP: 477, FN: 784
-2025-02-06 15:49:56,936 - INFO - Testing: 128, 3, 100, Accuracy:94.25, DetectionFailurRate:3.71, FalseAlarm:7.88, Contact Detection Delay: 59.16ms, No-Contact Detection Delay: 51.47ms, TP: 5430, TN: 4966, FP: 425, FN: 209
-2025-02-06 15:50:14,897 - INFO - Testing: 128, 5, 80, Accuracy:89.88, DetectionFailurRate:12.46, FalseAlarm:7.75, Contact Detection Delay: 65.55ms, No-Contact Detection Delay: 62.98ms, TP: 4806, TN: 4977, FP: 418, FN: 684
-2025-02-06 15:50:32,794 - INFO - Testing: 128, 5, 100, Accuracy:84.86, DetectionFailurRate:6.54, FalseAlarm:24.59, Contact Detection Delay: 56.18ms, No-Contact Detection Delay: 47.41ms, TP: 5344, TN: 3926, FP: 1280, FN: 374
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 2025-02-06 15:52:45,484 - INFO - trained on franka_mindlab/trained_models/contact_detection/63, test on franka_mindlab
 2025-02-06 15:53:05,160 - INFO - Testing: 64, 3, 80, Accuracy:91.78, DetectionFailurRate:8.04, FalseAlarm:8.34, Contact Detection Delay: 68.43ms, No-Contact Detection Delay: 40.37ms, TP: 4506, TN: 6828, FP: 621, FN: 394
 2025-02-06 15:53:24,942 - INFO - Testing: 64, 3, 100, Accuracy:86.93, DetectionFailurRate:9.16, FalseAlarm:15.75, Contact Detection Delay: 69.65ms, No-Contact Detection Delay: 43.47ms, TP: 4541, TN: 6156, FP: 1151, FN: 458
